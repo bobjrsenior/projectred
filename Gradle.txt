@@ -1,0 +1,5 @@
+In Eclipse:
+Help > Install File software
+site: http://dist.springsource.com/release/TOOLS/update/e4.4/
+
+select all

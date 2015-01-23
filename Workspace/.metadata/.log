@@ -17,3 +17,343 @@ java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfigu
 	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
 	at java.util.TimerThread.mainLoop(Unknown Source)
 	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-01-23 18:43:08.995
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:192)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2015-01-23 18:43:08.995
+!MESSAGE Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+!STACK 0
+javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-01-23 18:49:17.286
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:192)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2015-01-23 18:49:17.286
+!MESSAGE Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+!STACK 0
+javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-01-23 18:49:45.841
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:192)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2015-01-23 18:49:45.841
+!MESSAGE Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+!STACK 0
+javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-01-23 18:52:37.656
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at jar:file:/C:/Users/user/Downloads/gradle-2.2.1-bin.zip!/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:395)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:653)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2015-01-23 18:52:37.656
+!MESSAGE No repository found at jar:file:/C:/Users/user/Downloads/gradle-2.2.1-bin.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-01-23 18:52:38.094
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:192)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.transport.ecf 4 1002 2015-01-23 18:52:38.094
+!MESSAGE Unable to read repository at https://plugins.genymotion.com/eclipse/content.xml.
+!STACK 0
+javax.net.ssl.SSLException: hostname in certificate didn't match: <plugins.genymotion.com> != <*.cachefly.net> OR <*.cachefly.net> OR <loader.engage.gsfn.us> OR <cdn.livechatinc.com> OR <chat.livechatinc.net> OR <f.wildapricot.org> OR <cdn.mxpnl.com> OR <cf.cdn.cashnetusa.com> OR <cf.cdn.onlineapplyadvance.com> OR <cf.cdn.quickquid.co.uk> OR <cf.cdn.poundstopocket.co.uk> OR <cf.cdn.dollarsdirect.com.au> OR <cf.cdn.dollarsdirect.ca> OR <cdn.volunteer2.com> OR <static.fmpub.net> OR <cdn.tomwaterhouse.com> OR <cdn.betstar.com.au> OR <cdn.flurry.com> OR <cdn.betjack.com.au> OR <js.dmtry.com> OR <cdn.toyfoundry.net> OR <www.sfw-cdn.com> OR <cdn.arstechnica.net> OR <e4b-2.richrelevance.com> OR <s3.sfw-cdn.com> OR <static.readyflowers.com> OR <ocp.cscglobal.com> OR <oi.meetings.io> OR <resources.superherostuff.com> OR <cdn.m-pathy.com> OR <cdn.nexternal.com> OR <*.volotea.com> OR <*.iconfinder.com> OR <cdn-w.gettraffic.com> OR <cdn.motorola-2.com> OR <cdn.topsport.com.au> OR <cdn.imflyingin.com> OR <cdn02.nord.com> OR <webmedia.bankofamerica.com> OR <f5.wildapricot.org> OR <cdn.speeddate.com> OR <cache.green1020.com> OR <cache.agilebits.com> OR <cdn.coverstand.com> OR <cdn.smart-digital-solutions.com> OR <cdn.sandals.com> OR <cdn.richrelevance.com> OR <cdn.muscleandstrength.com> OR <cachefly.alfredapp.com> OR <cdn.selinc.com> OR <static.ahix.com> OR <*.cdn.overdrive.com> OR <ssl-cdn.media.innity.net> OR <images.contentreserve.com>
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:227)
+	at org.apache.http.conn.ssl.BrowserCompatHostnameVerifier.verify(BrowserCompatHostnameVerifier.java:54)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:147)
+	at org.apache.http.conn.ssl.AbstractVerifier.verify(AbstractVerifier.java:128)
+	at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket(SSLSocketFactory.java:439)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:643)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:479)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:805)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:259)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-01-23 18:55:37.443 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data C:\Users\user\Documents\Github\projectred\Workspace -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.fx.core 4 0 2015-01-23 18:55:43.498
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.core [520]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+  Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+       org.eclipse.jdt.annotation [190]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.osgi.util 4 0 2015-01-23 18:55:43.501
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.osgi.util [522]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+       org.eclipse.fx.core [520]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+         Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+              org.eclipse.jdt.annotation [190]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springsource.ide.eclipse.commons.browser 4 0 2015-01-23 18:55:43.509
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.browser [642]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.osgi.util; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.osgi.util; bundle-version="1.0.0.201408150602"
+       org.eclipse.fx.osgi.util [522]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+              org.eclipse.fx.core [520]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+                Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+                  -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+                     org.eclipse.jdt.annotation [190]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springsource.ide.eclipse.commons.gettingstarted 4 0 2015-01-23 18:55:43.513
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springsource.ide.eclipse.commons.gettingstarted [649]
+  Unresolved requirement: Require-Bundle: org.springsource.ide.eclipse.commons.browser
+    -> Bundle-SymbolicName: org.springsource.ide.eclipse.commons.browser; bundle-version="3.6.3.201411271001-RELEASE"; singleton:="true"
+       org.springsource.ide.eclipse.commons.browser [642]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.osgi.util; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.osgi.util; bundle-version="1.0.0.201408150602"
+              org.eclipse.fx.osgi.util [522]
+                Unresolved requirement: Require-Bundle: org.eclipse.fx.core; bundle-version="0.9.0"
+                  -> Bundle-SymbolicName: org.eclipse.fx.core; bundle-version="1.0.0.201408150602"
+                     org.eclipse.fx.core [520]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jdt.annotation; bundle-version="[2.0.0,3.0.0)"; resolution:="optional"
+                         -> Bundle-SymbolicName: org.eclipse.jdt.annotation; bundle-version="2.0.0.v20140415-1436"
+                            org.eclipse.jdt.annotation [190]
+                              Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-01-23 18:55:52.160
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-01-23 18:55:53.910
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-23 18:55:53.910
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-23 18:55:53.910
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
