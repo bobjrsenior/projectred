@@ -10,9 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.files.FileHandle;
 
 public class Dialog 
@@ -20,7 +18,6 @@ public class Dialog
 	private String name;
 	private String text;
 	private int num;
-	private Texture dialogBox;
 	private SpriteBatch batch;
 	private Sprite sprite;
 	
@@ -35,19 +32,17 @@ public class Dialog
 
 	Random rnd = new Random();
 	
-	//FileReader read = new FileReader();
-	
-	int width = (int)Gdx.graphics.getWidth();
-	int height = (int)Gdx.graphics.getHeight()/3;
-	int x = 0;
-	int y = (int)(Gdx.graphics.getHeight() - height);
-	Rectangle rec = new Rectangle(x, y, width, height);
-	
-	sprite = new Sprite(rec);
-	
+	//takes in the race if minor and the name if Major
 	public Dialog(String type)
 	{
 		name = type;
+		
+		if(name == "zombie")
+			getZombie();
+		else if (name == "Alien")
+			getAlien();
+		else if (name == "Human")
+			getHuman();
 	}
 
 	public void getZombie()

@@ -2,9 +2,9 @@ package com.mygdx.game.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.mygdx.game.MyGdxGame;
+//import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.BasicMap;
-import com.mygdx.game.*;
+//import com.mygdx.game.*;
 //import com.mygdx.game.MyGdxGame;
 //import com.mygdx.game.BasicMap;
 

@@ -67,7 +67,6 @@ public class Player extends Character implements InputProcessor{
         return false;
 	}
 
-
 	@Override
 	public boolean keyDown(int keycode) {
 		// TODO Auto-generated method stub

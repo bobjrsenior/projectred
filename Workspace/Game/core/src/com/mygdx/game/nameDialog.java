@@ -10,16 +10,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.files.FileHandle;
 
 public class nameDialog {
 	private String name;
 	private String text;
 	private int num;
-	private Texture dialogBox;
 	private SpriteBatch batch;
 	private Sprite sprite;
 	Texture rec;
