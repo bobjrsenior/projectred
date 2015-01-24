@@ -11,9 +11,8 @@ import com.mygdx.game.*;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new TitleScreen(), config);
+		//new LwjglApplication(new TitleScreen(), config);
 		//new LwjglApplication(new MyGdxGame(), config);
 		new LwjglApplication(new BasicMap(), config);
-		//new LwjglApplication(new BasicMap(), config);
 	}
 }

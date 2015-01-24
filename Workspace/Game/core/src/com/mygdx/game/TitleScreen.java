@@ -38,7 +38,7 @@ public class TitleScreen extends ApplicationAdapter implements InputProcessor{
 	
 	public void dispose() {
 		batch.dispose();
-		selectTex.dispose()
+		selectTex.dispose();
 	}
 	
 	@Override

@@ -1,92 +1,102 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 
-public class Player {
+public class Player extends Character implements InputProcessor{
 	//Debug: Gdx.app.log("Tag", "Text");
-	
-	public float x,y;
-	
-	public Texture tex;
-	
-	private Collisions collider;
-	public boolean has_collider = false;
-	
-	
 	public Player(float x, float y, Texture tex) {
-		this.x = x;
-		this.y = y;
-		this.tex = tex;
-		
-		collider = new Collisions();
+		super(x, y, tex);
+		char_index = addCharacter(this);
+	}
+	
+	@Override
+	public boolean keyUp(int keycode){
+        if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
+        	translate(-32,0);
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(32,0);
+		    	}
+        	}
+        }
+        if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D){
+        	translate(32,0);
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(-32,0);
+		    	}
+        	}
+        }
+        if(keycode == Input.Keys.UP || keycode == Input.Keys.W){
+        	translate(0,32);
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(0,-32);
+		    	}
+        	}
+        }
+        if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S){
+        	translate(0,-32);
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(0,32);
+		    	}
+        	}
+        }
+        return false;
 	}
 
-	public Player(Texture tex) {
-		Gdx.app.log("Player","Pos not set");
-		this.x = 0;
-		this.y = 0;
-		this.tex = tex;
-		
-		collider = new Collisions();
+
+	@Override
+	public boolean keyDown(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public void setCollider(){
-		collider.setRectangle(x, y, 10, 10);
-		has_collider = true;
+
+
+	@Override
+	public boolean keyTyped(char character) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public void setCollider(float width, float height){
-		collider.setRectangle(x, y, width, height);
-		has_collider = true;
+
+
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public void setCollider(float radius){
-		collider.setCircle(x, y, radius);
-		has_collider = true;
+
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public void setCollider(Shape2D shape){
-		try{
-			if(((Circle) shape).radius != 0){
-				collider.setCircle(shape);
-			}
-		}
-		catch (java.lang.ClassCastException e){
-			collider.setRectangle(shape);
-		}
-		has_collider = true;
+
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public Shape2D getCollider(){
-		return collider.getCollider();
+
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	
-	public void setPosition(float x, float y){
-		this.x = x;
-		this.y = y;
-		if(has_collider){
-			collider.setPosition(x, y);
-		}
-		else{
-			Gdx.app.log("Player", "No Collider");
-		}
-	}
-	
-	public void translate(float x, float y){
-		this.x += x;
-		this.y += y;
-		if(has_collider){
-			collider.setPosition(this.x, this.y);
-		}
-		else{
-			Gdx.app.log("Player", "No Collider");
-		}
-	}
-	
-	public boolean isColliding(Shape2D other){
-		return collider.isColliding(other);
+
+
+	@Override
+	public boolean scrolled(int amount) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -28,7 +29,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     Player test_player2;
     
     @Override
-    public void create () {
+    public void create () {    	
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
         batch = new SpriteBatch();
@@ -46,6 +47,13 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         tiledMap = new TmxMapLoader().load("map3.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
         Gdx.input.setInputProcessor(this);
+        
+    	InputProcessor inputProcessorOne = test_player;
+    	InputProcessor inputProcessorTwo = this;
+    	InputMultiplexer inputMultiplexer = new InputMultiplexer();
+    	inputMultiplexer.addProcessor(inputProcessorOne);
+    	inputMultiplexer.addProcessor(inputProcessorTwo);
+    	Gdx.input.setInputProcessor(inputMultiplexer);
     }
     
     public void dispose() {
@@ -75,34 +83,6 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A)
-            //camera.translate(-32,0);
-        	test_player.translate(-32,0);
-	    	if(test_player.isColliding(test_player2.getCollider())){
-	    		test_player.translate(32,0);
-	    	}
-        	//sprite.translate(-32,0);
-        if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D)
-            //camera.translate(32,0);
-        	test_player.translate(32,0);
-	    	if(test_player.isColliding(test_player2.getCollider())){
-	    		test_player.translate(-32,0);
-	    	}
-        	//sprite.translate(32,0);
-        if(keycode == Input.Keys.UP || keycode == Input.Keys.W)
-            //camera.translate(0,32);
-        	test_player.translate(0,32);
-	    	if(test_player.isColliding(test_player2.getCollider())){
-	    		test_player.translate(0,-32);
-	    	}
-        	//sprite.translate(0,-32);
-        if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S)
-            //camera.translate(0,-32);
-        	test_player.translate(0,-32);
-	    	if(test_player.isColliding(test_player2.getCollider())){
-	    		test_player.translate(0,32);
-	    	}
-        	//sprite.translate(0,32);
         if(keycode == Input.Keys.NUM_1)
             tiledMap.getLayers().get(0).setVisible(!tiledMap.getLayers().get(0).isVisible());
         if(keycode == Input.Keys.NUM_2)
