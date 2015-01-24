@@ -55,14 +55,14 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 
         test_player = new Player(75, 50,new Texture("person.png"));
         test_player.setCollider(15f, 15f);
-        test_npc = new Enemy(75, 350,new Texture("person.png"));
+        test_npc = new Enemy(75, 350,new Texture("alienFriend.png"));
         test_npc.setCollider(15f, 15f);
         test_npc.startFollow(player);
 
         person = new Texture("person.png");
         sprite = new Sprite(person);
         sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
-        tiledMap = new TmxMapLoader().load("map3.tmx");
+        tiledMap = new TmxMapLoader().load("Map/map2.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
         Gdx.input.setInputProcessor(this);
         
@@ -104,7 +104,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         batch.draw(npc.tex, npc.x, npc.y);
 
         sprite.draw(batch);
-        batch.draw(test_player.tex, test_player.x, test_player.y);
+        //batch.draw(test_player.tex, test_player.x, test_player.y);
         batch.draw(test_npc.tex, test_npc.x, test_npc.y);
 
         batch.end();
