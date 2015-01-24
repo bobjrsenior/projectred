@@ -41,6 +41,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         test_player.setCollider(10f, 10f);
         test_player2 = new Player(75, 150,new Texture("person.png"));
         test_player2.setCollider(10f, 10f);
+        test_player2.startFollow(test_player);
         person = new Texture("person.png");
         sprite = new Sprite(person);
         sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
@@ -63,6 +64,9 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 
     @Override
     public void render () {
+    	//Call various classes update methods
+    	test_player2.update();
+    	
         Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

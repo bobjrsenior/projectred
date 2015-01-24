@@ -39,6 +39,11 @@ public class Character {
 		collider = new Collisions();
 	}
 	
+	//Can be called every frame if designated in map
+	public void update(){
+		
+	}
+	
 	public int addCharacter(Character c){
 		characters.add(c);
 		return characters.size() - 1;
