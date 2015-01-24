@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Human extends NPC{
 
-	nameDialog dialog = new nameDialog("Human");
+	//nameDialog dialog = new nameDialog("Human");
 	
 	public Human(float x, float y, Texture tex) {
 		super(x, y, tex);

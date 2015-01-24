@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -16,7 +17,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector3;
 
-public class BasicMap extends ApplicationAdapter implements InputProcessor {
+public class BasicMap extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;
     Texture person;
     SpriteBatch batch;
@@ -36,8 +37,16 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     //Player test_player;
     Enemy test_npc;
     
+    SceneManager game;
+    
+    public BasicMap(SceneManager g){
+    	game = g;
+    	
+    }
+    
     @Override
-    public void create () {    	
+    public void create () {
+
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
         batch = new SpriteBatch();
@@ -162,4 +171,22 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     public boolean scrolled(int amount) {
         return false;
     }
+
+	@Override
+	public void show() {
+		create();
+		
+	}
+
+	@Override
+	public void render(float delta) {
+		render();
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
 }

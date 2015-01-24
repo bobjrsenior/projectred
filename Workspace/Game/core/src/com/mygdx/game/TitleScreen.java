@@ -3,17 +3,19 @@ package com.mygdx.game;
 //import java.util.*;
 
 //import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
-public class TitleScreen extends ApplicationAdapter implements InputProcessor{
+public class TitleScreen implements InputProcessor, Screen{
 	Texture title;
 	Texture newGame;
 	Texture close;
@@ -21,7 +23,13 @@ public class TitleScreen extends ApplicationAdapter implements InputProcessor{
 	Sprite select;
 	SpriteBatch batch;
 	
-	@Override
+	SceneManager game;
+	
+	public TitleScreen(SceneManager g){
+		game = g;
+		
+	}
+	
 	public void create() {
 		//float h = Gdx.graphics.getHeight();
 		//float w = Gdx.graphics.getWidth();
@@ -41,8 +49,7 @@ public class TitleScreen extends ApplicationAdapter implements InputProcessor{
 		selectTex.dispose();
 	}
 	
-	@Override
-	public void render() {
+	public void render(){
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
@@ -55,9 +62,11 @@ public class TitleScreen extends ApplicationAdapter implements InputProcessor{
 	
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		if(screenX < 256 && screenX > 96 && screenY < 416 && screenY >384); //New Game button
+		if(screenX < 256 && screenX > 96 && screenY < 416 && screenY >384) //New Game button
+			game.setScreen(game.basicMapScreen);
 		if(screenX < 256 && screenX > 96 && screenY < 448 && screenY >416)  //Close button
-			dispose();
+			Gdx.app.exit();
+			//dispose();
         return true;
     }
 	 @Override
@@ -101,4 +110,38 @@ public class TitleScreen extends ApplicationAdapter implements InputProcessor{
 	    public boolean scrolled(int amount) {
 	        return false;
 	    }
+
+		@Override
+		public void show() {
+			create();
+		}
+
+		@Override
+		public void render(float delta) {
+			render();			
+		}
+
+		@Override
+		public void hide() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void resize(int width, int height) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void pause() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void resume() {
+			// TODO Auto-generated method stub
+			
+		}
 	}

@@ -1,0 +1,20 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Game;
+
+ public class SceneManager extends Game {
+  
+
+         TitleScreen mainMenuScreen;
+         BasicMap basicMapScreen;
+  
+
+        @Override
+         public void create() {
+                 mainMenuScreen = new TitleScreen(this);
+                 basicMapScreen = new BasicMap(this);
+                 setScreen(mainMenuScreen);   
+         }
+  }
+
