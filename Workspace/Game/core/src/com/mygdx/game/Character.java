@@ -6,12 +6,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
+import com.badlogic.gdx.math.Vector2;
 
 public class Character {
 	//Debug: Gdx.app.log("Character", "Text");
 	
 	public static ArrayList<Character> characters = new ArrayList<Character>();
 	public int char_index;
+	
+	public int tilesize = 32;
 	
 	public int health = 100;
 	public float x,y;
@@ -41,7 +44,11 @@ public class Character {
 	
 	//Can be called every frame if designated in map
 	public void update(){
-		
+
+	}
+	
+	public float distance(float x1, float y1, float x2, float y2){
+		return (float) Math.sqrt(((x2 - x1) * (x2 - x2)) + ((y2 - y1) * (y2 - y1)));
 	}
 	
 	public int addCharacter(Character c){
@@ -100,6 +107,10 @@ public class Character {
 		else{
 			Gdx.app.log("Character", "No Collider");
 		}
+	}
+	
+	public Vector2 getPosition(){
+		return new Vector2(x,y);
 	}
 	
 	public boolean isColliding(Shape2D other){
