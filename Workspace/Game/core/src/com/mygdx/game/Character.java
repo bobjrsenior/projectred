@@ -8,11 +8,12 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Character {
-	//Debug: Gdx.app.log("Tag", "Text");
+	//Debug: Gdx.app.log("Character", "Text");
 	
 	public static ArrayList<Character> characters = new ArrayList<Character>();
 	public int char_index;
 	
+	public int health = 100;
 	public float x,y;
 	
 	public Texture tex;

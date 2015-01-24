@@ -7,8 +7,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Collisions {
-	//Debug: Gdx.app.log("Tag", "Text");
-	
+	//Debug: Gdx.app.log("Collisions", "Text");	
 	
 	private Shape2D collider;
 	//true = rectangle false = circle
@@ -71,8 +70,6 @@ public class Collisions {
 	}
 	
 	public boolean isColliding(Shape2D other){
-		//try = other = circle
-		//catch = other = rectangle
 		try{
 			if(((Circle) other).radius != 0){
 				//true = rectangle false = circle

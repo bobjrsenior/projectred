@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Player extends Character implements InputProcessor{
-	//Debug: Gdx.app.log("Tag", "Text");
+	//Debug: Gdx.app.log("Player", "Text");
 	public Player(float x, float y, Texture tex) {
 		super(x, y, tex);
 		char_index = addCharacter(this);
@@ -21,6 +21,10 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(32,0);
+		    		if(characters.get(e) instanceof Enemy){
+		    			health -= 10;
+		    			Gdx.app.log("Player", " " + health);
+		    		}
 		    	}
         	}
         }
@@ -29,6 +33,10 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-32,0);
+		    		if(characters.get(e) instanceof Enemy){
+		    			health -= 10;
+		    			Gdx.app.log("Player", " " + health);
+		    		}
 		    	}
         	}
         }
@@ -37,6 +45,10 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(0,-32);
+		    		if(characters.get(e) instanceof Enemy){
+		    			health -= 10;
+		    			Gdx.app.log("Player", " " + health);
+		    		}
 		    	}
         	}
         }
@@ -45,6 +57,10 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(0,32);
+		    		if(characters.get(e) instanceof Enemy){
+		    			health -= 10;
+		    			Gdx.app.log("Player", " " + health);
+		    		}
 		    	}
         	}
         }
