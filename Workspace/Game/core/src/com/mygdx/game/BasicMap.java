@@ -43,15 +43,15 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         camera.update();
         
         player = new Player(75, 50,new Texture("player.png"));
-        player.setCollider(10f, 10f);
+        player.setCollider(15f, 15f);
         
         test_player2 = new NPC(75, 150,new Texture("person.png"));
-        test_player2.setCollider(10f, 10f);
+        test_player2.setCollider(15f, 15f);
         
         //test_player2.startFollow(player);
         
         npc = new NPC(300, 50,new Texture("person.png"));
-        npc.setCollider(10f, 10f);
+        npc.setCollider(15f, 15f);
 
         test_player = new Player(75, 50,new Texture("person.png"));
         test_player.setCollider(15f, 15f);
