@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1422079978247_1" label="Game" name="Game">
-<item elementID="=Game" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=my-gdx-game-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=my-gdx-game-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=my-gdx-game-html" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1422056156267_0" label="Window Working Set" name="Aggregate for window 1422056156267"/>
 </workingSetManager>
