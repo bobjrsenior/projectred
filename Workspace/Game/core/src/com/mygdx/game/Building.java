@@ -14,7 +14,7 @@ public class Building extends Obstacle{
 	}
 	
 	public void setColliderBuilding(){
-		setCollider(new Rectangle(x,y,280,285));
+		setCollider(new Rectangle(x,y,320,320));
 	}
 	
 	public void setColliderHouse(){

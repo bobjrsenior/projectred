@@ -10,12 +10,15 @@ import com.badlogic.gdx.math.Shape2D;
 public class Player extends Character implements InputProcessor{
 	//Debug: Gdx.app.log("Player", "Text");
 	
+	public Inventory inventory;
+	
 	public int thirst;
 	public int hunger;
 	
 	public Player(float x, float y, Texture tex) {
 		super(x, y, tex);
 		char_index = addCharacter(this);
+		inventory = new Inventory();
 	}
 	
 	@Override

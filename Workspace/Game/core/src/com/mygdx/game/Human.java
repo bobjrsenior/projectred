@@ -10,12 +10,13 @@ public class Human extends NPC{
 	public Human(float x, float y, Texture tex) {
 		super(x, y, tex);
 		char_index = addCharacter(this);
-		getDialog();
+		//getDialog();
 	}
 	
 	public void getDialog(){
-		dialog.getHuman();
-		dialog.create();
+		//dialog.getHuman();
+		//dialog.create();
+		//dialog.render();
 	}
 	
 	/*@Override

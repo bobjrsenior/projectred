@@ -52,7 +52,7 @@ public class Enemy extends Character{
 	public void hit(int index){
 		if(characters.get(index) instanceof Player){
 			((Player) characters.get(index)).health -= 10;
-			Gdx.app.log("Player(e)", " " + health);
+			Gdx.app.log("Player(e)", " " + characters.get(index).health);
 		}
 		else if(characters.get(index) instanceof Enemy){
 			//
@@ -168,6 +168,7 @@ public class Enemy extends Character{
 			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+
 		    		translate(-tilesize * Math.signum(xdif), 0);
 		    		hit(e);
 		    		hitting = true;
