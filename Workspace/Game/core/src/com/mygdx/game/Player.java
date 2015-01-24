@@ -9,48 +9,96 @@ import com.badlogic.gdx.math.Shape2D;
 
 public class Player extends Character implements InputProcessor{
 	//Debug: Gdx.app.log("Player", "Text");
+	
+	public Inventory inventory;
+	
+	public int thirst;
+	public int hunger;
+	
 	public Player(float x, float y, Texture tex) {
 		super(x, y, tex);
 		char_index = addCharacter(this);
+		inventory = new Inventory();
 	}
 	
 	@Override
 	public boolean keyUp(int keycode){
+		boolean hitting = false;
         if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
-        	translate(-32,0);
+        	translate(-tilesize,0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(32,0);
+		    		translate(tilesize,0);
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(tilesize,0);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
         }
         if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D){
-        	translate(32,0);
+        	translate(tilesize,0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(-32,0);
+		    		translate(-tilesize,0);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize,0);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
         }
         if(keycode == Input.Keys.UP || keycode == Input.Keys.W){
-        	translate(0,32);
+        	translate(0,tilesize);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(0,-32);
+		    		translate(0,-tilesize);
+		    		hitting = true;
 		    		break;
 		    	}
         	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(0,-tilesize);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
+        	}
         }
         if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S){
-        	translate(0,-32);
+        	translate(0,-tilesize);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(0,32);
+		    		translate(0,tilesize);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(0,tilesize);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
         }
         return false;
@@ -64,6 +112,10 @@ public class Player extends Character implements InputProcessor{
 		else if(characters.get(index) instanceof NPC){
 			((NPC) characters.get(index)).talk();
 		}
+	}
+	
+	public void hitOb(int index){
+		
 	}
 
 	@Override

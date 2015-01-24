@@ -5,15 +5,18 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Human extends NPC{
 
-	//Dialog dialog = new Dialog("Human");
+	nameDialog dialog = new nameDialog("Human");
 	
 	public Human(float x, float y, Texture tex) {
 		super(x, y, tex);
 		char_index = addCharacter(this);
+		//getDialog();
 	}
 	
 	public void getDialog(){
-		//return dialog.getHuman();
+		//dialog.getHuman();
+		//dialog.create();
+		//dialog.render();
 	}
 	
 	/*@Override

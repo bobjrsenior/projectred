@@ -20,13 +20,17 @@ public class NPC extends Character{
 	public float wanderspeed = 2;
 	public float wandertimer = 0;
 	private Vector2 dest;
+	private int stuckcount = 0;
+
 	
 	Random rand = new Random(System.nanoTime());
+	
 	
 	public NPC(float x, float y, Texture tex) {
 		super(x,y,tex);
 
 		char_index = addCharacter(this);
+		startWander();
 	}
 	
 	public void startFollow(Player leader){
@@ -68,6 +72,7 @@ public class NPC extends Character{
 	
 	//Wander Stuff
 	public void startWander(){
+		stuckcount = 0;
 		dest = new Vector2(rand.nextInt(600) - 300, rand.nextInt(600) - 300);
 		dest = dest.add(x, y);
 		wandering = true;
@@ -85,24 +90,29 @@ public class NPC extends Character{
 			startWander();
 		}
 		else if(Math.abs(xdif) > Math.abs(ydif)){
-			translate(32 * Math.signum(xdif), 0);
+			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(xdif), 0);
+		    		stuckcount ++;
 		    		hit(e);
 		    		break;
 		    	}
         	}
 		}
 		else{
-			translate(0, 32 * Math.signum(ydif));
+			translate(0, tilesize * Math.signum(ydif));
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(ydif), 0);
+		    		stuckcount ++;
 		    		hit(e);
 		    		break;
 		    	}
         	}
+		}
+		if(stuckcount >= 3){
+			startWander();
 		}
 	}
 	
@@ -133,7 +143,7 @@ public class NPC extends Character{
 		int xdif = (int) (follow.x - x);
 		int ydif = (int) (follow.y - y);
 		if(Math.abs(xdif) > Math.abs(ydif)){
-			translate(32 * Math.signum(xdif), 0);
+			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(xdif), 0);
@@ -142,7 +152,7 @@ public class NPC extends Character{
         	}
 		}
 		else{
-			translate(0, 32 * Math.signum(ydif));
+			translate(0, tilesize * Math.signum(ydif));
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(ydif), 0);

@@ -14,7 +14,7 @@ public class Character {
 	public static ArrayList<Character> characters = new ArrayList<Character>();
 	public int char_index;
 	
-	public int tilesize = 32;
+	public static int tilesize = 32;
 	
 	public int health = 100;
 	public float x,y;
@@ -116,4 +116,5 @@ public class Character {
 	public boolean isColliding(Shape2D other){
 		return collider.isColliding(other);
 	}
+
 }

@@ -20,6 +20,7 @@ public class Enemy extends Character{
 	public float wanderspeed = 2;
 	public float wandertimer = 0;
 	private Vector2 dest;
+	private int stuckcount = 0;
 	
 	Random rand = new Random(System.nanoTime());
 	
@@ -51,11 +52,15 @@ public class Enemy extends Character{
 	public void hit(int index){
 		if(characters.get(index) instanceof Player){
 			((Player) characters.get(index)).health -= 10;
-			Gdx.app.log("Player(e)", " " + health);
+			Gdx.app.log("Player(e)", " " + characters.get(index).health);
 		}
 		else if(characters.get(index) instanceof Enemy){
 			//
 		}
+	}
+	
+	public void hitOb(int index){
+
 	}
 	
 	public float distance(){
@@ -65,8 +70,10 @@ public class Enemy extends Character{
 	
 	//Wander Stuff
 	public void startWander(){
+		stuckcount = 0;
 		dest = new Vector2(rand.nextInt(600) - 300, rand.nextInt(600) - 300);
 		dest = dest.add(x, y);
+		wandering = true;
 		wandering = true;
 	}
 	
@@ -75,6 +82,7 @@ public class Enemy extends Character{
 	}
 	
 	public void wanderStep(){
+		boolean hitting = false;
 		int xdif = (int) (dest.x - x);
 		int ydif = (int) (dest.y - y);
 		if(Math.abs(xdif) + Math.abs(ydif) <=  tilesize){
@@ -82,25 +90,53 @@ public class Enemy extends Character{
 			startWander();
 		}
 		else if(Math.abs(xdif) > Math.abs(ydif)){
-			translate(32 * Math.signum(xdif), 0);
+			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(xdif), 0);
+		    		stuckcount ++;
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(xdif), 0);
+    		    		stuckcount ++;
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
 		}
 		else{
-			translate(0, 32 * Math.signum(ydif));
+			translate(0, tilesize * Math.signum(ydif));
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(ydif), 0);
+		    		stuckcount ++;
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
         	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(ydif), 0);
+    		    		stuckcount ++;
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
+        	}
 		}
+		if(stuckcount >= 3){
+			startWander();
+		}
+		
 	}
 	
 	//Following stuff
@@ -125,27 +161,48 @@ public class Enemy extends Character{
 	}
 	
 	public void followStep(){
+		boolean hitting = false;
 		int xdif = (int) (follow.x - x);
 		int ydif = (int) (follow.y - y);
 		if(Math.abs(xdif) > Math.abs(ydif)){
-			translate(32 * Math.signum(xdif), 0);
+			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(-32 * Math.signum(xdif), 0);
+
+		    		translate(-tilesize * Math.signum(xdif), 0);
+		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(xdif), 0);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
 		}
 		else{
-			translate(0, 32 * Math.signum(ydif));
+			translate(0, tilesize * Math.signum(ydif));
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(-32 * Math.signum(ydif), 0);
+		    		translate(-tilesize * Math.signum(ydif), 0);
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
         	}
-		}
+        	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+		    		translate(-tilesize * Math.signum(ydif), 0);
+		    		hitOb(e);
+		    		break;
+		    	}
+        	}
+    	}
 	}
 	
 }
