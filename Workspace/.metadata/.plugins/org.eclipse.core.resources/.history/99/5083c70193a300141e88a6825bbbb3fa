@@ -1,0 +1,11 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class NPC extends Character{
+
+	public NPC(float x, float y, Texture tex) {
+		super(x,y,tex);
+	}
+
+}

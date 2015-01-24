@@ -1,0 +1,98 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class Player extends Character implements InputProcessor{
+	//Debug: Gdx.app.log("Tag", "Text");
+	public Player(float x, float y, Texture tex) {
+		super(x, y, tex);
+		addCharacter(this);
+	}
+	
+	
+	public boolean keyUp(int keycode){
+        if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A)
+            //camera.translate(-32,0);
+        	test_player.translate(-32,0);
+	    	if(test_player.isColliding(test_player2.getCollider())){
+	    		test_player.translate(32,0);
+	    	}
+        	//sprite.translate(-32,0);
+        if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D)
+            //camera.translate(32,0);
+        	test_player.translate(32,0);
+	    	if(test_player.isColliding(test_player2.getCollider())){
+	    		test_player.translate(-32,0);
+	    	}
+        	//sprite.translate(32,0);
+        if(keycode == Input.Keys.UP || keycode == Input.Keys.W)
+            //camera.translate(0,32);
+        	test_player.translate(0,32);
+	    	if(test_player.isColliding(test_player2.getCollider())){
+	    		test_player.translate(0,-32);
+	    	}
+        	//sprite.translate(0,-32);
+        if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S){
+            //camera.translate(0,-32);
+        	test_player.translate(0,-32);
+	    	if(test_player.isColliding(test_player2.getCollider())){
+	    		test_player.translate(0,32);
+	    	}
+        	//sprite.translate(0,32);
+        }
+	}
+
+
+	@Override
+	public boolean keyDown(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean keyTyped(char character) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean scrolled(int amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

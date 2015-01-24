@@ -1,0 +1,39 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class Collisions {
+	
+	private Shape2D collider;
+	//true = rectangle false = circle
+	private boolean shape;
+
+	public Collisions() {
+		
+	}
+	
+	public void setRectangle(float x, float y, float width, float height){
+		collider = new Rectangle();
+		((Rectangle) collider).set(x, y, width, height);
+		shape = true;
+	}
+	
+	public void setCircle(float x, float y, float radius){
+		collider = new Circle();
+		((Circle) collider).set(x, y, radius);
+		shape = false;
+	}
+	
+	public void isColliding(){
+		//try{
+			if(((Rectangle) collider).height == 0f){
+				
+			}
+		//}
+		//catch{
+			
+		//}
+	}
+}

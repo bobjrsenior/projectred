@@ -1,0 +1,50 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class CollisionTest {
+	
+	int posx,posy;
+	
+	private Rectangle boundingbox;
+	
+	private Shape2D collider;
+	private boolean shape;
+
+	public CollisionTest(int posx, int posy) {
+		this.posx = posx;
+		this.posy = posy;
+		boundingbox = new Rectangle();
+		boundingbox.set(posx, posy, 20, 20);
+		Circle c = new Circle();
+		Gdx.app.log("Radius test","" + c.radius);
+	}
+	
+	public void collides(Shape2D shape){
+		if(((Circle) shape).radius == 0f){
+			
+		}
+		else{
+			
+		}
+	}
+
+	public Rectangle getBoundingbox() {
+		return boundingbox;
+	}
+
+	public Shape2D getCollider() {
+		return collider;
+	}
+
+	public void setRectangle(float x, float y, float width, float height) {
+		collider = new Rectangle();
+		((Rectangle) (collider)).set(x, y, width, height);
+	}
+	
+	
+}

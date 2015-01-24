@@ -1,0 +1,13 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class Player {
+	//Debug: Gdx.app.log("Tag", "Text");
+	public Player(float x, float y, Texture tex) {
+		super(x, y, tex);
+	}
+}

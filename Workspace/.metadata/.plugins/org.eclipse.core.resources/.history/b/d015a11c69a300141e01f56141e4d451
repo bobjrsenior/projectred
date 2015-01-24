@@ -1,0 +1,23 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
+
+public class CollisionTest {
+	
+	int posx,posy;
+	
+	private Rectangle boundingbox;
+
+	public CollisionTest(int posx, int posy) {
+		this.posx = posx;
+		this.posy = posy;
+		boundingbox = new Rectangle();
+		boundingbox.set(posx, posy, 20, 20);
+	}
+	
+	public bool collides_rect(Rectangle r){
+		return Intersector.overlaps(boundingbox, r);
+	}
+	
+}

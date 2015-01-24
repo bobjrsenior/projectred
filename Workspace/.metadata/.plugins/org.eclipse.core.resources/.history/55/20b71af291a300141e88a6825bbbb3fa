@@ -1,0 +1,10 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Enemy extends Character{
+	
+	public Enemy(float x, float y, Texture tex){
+		super(x,y,tex);
+	}
+}

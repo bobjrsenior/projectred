@@ -1,0 +1,73 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class CollisionTest {
+	//Debug: Gdx.app.log("","");
+	
+	
+	int posx,posy;
+	
+	private Rectangle boundingbox;
+	
+	private Shape2D collider;
+	//Rectangle = true Circle = false
+	private boolean shape;
+
+	public CollisionTest() {
+
+	}
+	
+	public void collides(Shape2D other){
+		/*if(shape){
+			if(((Circle) other).radius == 0f){
+				return Intersector.overlaps((Rectangle) collider, (Rectangle) other);
+			}
+			else{
+				return Intersector.overlaps((Circle) other, (Rectangle) collider);
+			}
+		}
+		else{
+			if(((Circle) other).radius == 0f){
+				return Intersector.overlaps((Circle) collider, (Rectangle) other);
+			}
+			else{
+				return Intersector.overlaps((Circle) collider, (Circle) other);
+			}
+		}*/
+		try{
+			((Circle) other).radius = 0f;
+		}catch (java.lang.ClassCastException e){
+			Gdx.app.log("g","g");
+		}
+	}
+
+	public Rectangle getBoundingbox() {
+		return boundingbox;
+	}
+
+	public Shape2D getCollider() {
+		return collider;
+	}
+
+	public void setRectangle(float x, float y, float width, float height) {
+		shape = true;
+		collider = new Rectangle();
+		((Rectangle) (collider)).set(x, y, width, height);
+	}
+	
+	public void setCircle(float x, float y, float radius) {
+		shape = false;
+		collider = new Circle();
+		((Circle) (collider)).set(x, y, radius);
+	}
+
+	public boolean getShape() {
+		return shape;
+	}
+
+}

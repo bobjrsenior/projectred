@@ -1,0 +1,40 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class CollisionTest {
+	
+	int posx,posy;
+	
+	private Rectangle boundingbox;
+	
+	private Shape2D collider;
+
+	public CollisionTest(int posx, int posy) {
+		this.posx = posx;
+		this.posy = posy;
+		boundingbox = new Rectangle();
+		boundingbox.set(posx, posy, 20, 20);
+	}
+	
+	public boolean collides(CollisionTest r){
+		return Intersector.overlaps(boundingbox, r.getBoundingbox());
+	}
+
+	public Rectangle getBoundingbox() {
+		return boundingbox;
+	}
+
+	public Shape2D getCollider() {
+		return collider;
+	}
+
+	public void setRectangle(float x, float y, float width, float height) {
+		collider = new Rectangle();
+		rectangle.set(x, y, width, height);
+	}
+	
+	
+}
