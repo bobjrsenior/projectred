@@ -29,6 +29,9 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     NPC test_player2;
     NPC npc;
     
+    Player test_player;
+    Enemy test_npc;
+    
     @Override
     public void create () {    	
         float w = Gdx.graphics.getWidth();
@@ -49,7 +52,13 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         
         npc = new NPC(300, 50,new Texture("person.png"));
         npc.setCollider(10f, 10f);
-        
+
+        test_player = new Player(75, 50,new Texture("person.png"));
+        test_player.setCollider(15f, 15f);
+        test_npc = new Enemy(75, 350,new Texture("person.png"));
+        test_npc.setCollider(15f, 15f);
+        test_npc.startFollow(player);
+
         person = new Texture("person.png");
         sprite = new Sprite(person);
         sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
@@ -73,8 +82,12 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     @Override
     public void render () {
     	//Call various classes update methods
+
     	test_player2.update();
     	npc.update();
+
+    	test_npc.update();
+
     	
         Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
@@ -83,11 +96,17 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         tiledMapRenderer.setView(camera);
         tiledMapRenderer.render();
         batch.begin();
+
         //sprite.draw(batch);
         batch.draw(player.tex, player.x, player.y);
         //lower left person
         batch.draw(test_player2.tex, test_player2.x, test_player2.y);
         batch.draw(npc.tex, npc.x, npc.y);
+
+        sprite.draw(batch);
+        batch.draw(test_player.tex, test_player.x, test_player.y);
+        batch.draw(test_npc.tex, test_npc.x, test_npc.y);
+
         batch.end();
     }
 

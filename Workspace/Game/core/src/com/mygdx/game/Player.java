@@ -21,10 +21,8 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(32,0);
-		    		if(characters.get(e) instanceof Enemy){
-		    			health -= 10;
-		    			Gdx.app.log("Player", " " + health);
-		    		}
+		    		hit(e);
+		    		break;
 		    	}
         	}
         }
@@ -33,10 +31,7 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-32,0);
-		    		if(characters.get(e) instanceof Enemy){
-		    			health -= 10;
-		    			Gdx.app.log("Player", " " + health);
-		    		}
+		    		break;
 		    	}
         	}
         }
@@ -45,10 +40,7 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(0,-32);
-		    		if(characters.get(e) instanceof Enemy){
-		    			health -= 10;
-		    			Gdx.app.log("Player", " " + health);
-		    		}
+		    		break;
 		    	}
         	}
         }
@@ -57,14 +49,21 @@ public class Player extends Character implements InputProcessor{
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(0,32);
-		    		if(characters.get(e) instanceof Enemy){
-		    			health -= 10;
-		    			Gdx.app.log("Player", " " + health);
-		    		}
+		    		break;
 		    	}
         	}
         }
         return false;
+	}
+	
+	public void hit(int index){
+		if(characters.get(index) instanceof Enemy){
+			health -= 10;
+			Gdx.app.log("Player", " " + health);
+		}
+		else if(characters.get(index) instanceof NPC){
+			((NPC) characters.get(index)).talk();
+		}
 	}
 
 	@Override
