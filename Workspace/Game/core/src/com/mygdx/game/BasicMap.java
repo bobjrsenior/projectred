@@ -24,9 +24,6 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
     OrthographicCamera camera;
     TiledMapRenderer tiledMapRenderer;
     
-    Player test_player;
-    Player test_player2;
-    
     @Override
     public void create () {
         float w = Gdx.graphics.getWidth();
@@ -36,10 +33,13 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         camera = new OrthographicCamera();
         camera.setToOrtho(false,w,h);
         camera.update();
+<<<<<<< HEAD
         test_player = new Player(75, 50,new Texture("person.png"));
         test_player.setCollider(10f, 10f);
         test_player2 = new Player(75, 150,new Texture("person.png"));
         test_player2.setCollider(10f, 10f);
+=======
+>>>>>>> eacc9ede39fe2cc86099db5240028088988ec37b
         person = new Texture("person.png");
         sprite = new Sprite(person);
         sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
@@ -63,8 +63,6 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         tiledMapRenderer.render();
         batch.begin();
         sprite.draw(batch);
-        batch.draw(test_player.tex, test_player.x, test_player.y);
-        batch.draw(test_player2.tex, test_player2.x, test_player2.y);
         batch.end();
     }
 
@@ -75,6 +73,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
+<<<<<<< HEAD
         if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A)
             //camera.translate(-32,0);
         	test_player.translate(-32,0);
@@ -102,6 +101,19 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 	    	if(test_player.isColliding(test_player2.getCollider())){
 	    		test_player.translate(0,32);
 	    	}
+=======
+        if(keycode == Input.Keys.LEFT)
+            camera.translate(-32,0);
+        	//sprite.translate(-32,0);
+        if(keycode == Input.Keys.RIGHT)
+            camera.translate(32,0);
+        	//sprite.translate(32,0);
+        if(keycode == Input.Keys.UP)
+            camera.translate(0,32);
+        	//sprite.translate(0,-32);
+        if(keycode == Input.Keys.DOWN)
+            camera.translate(0,-32);
+>>>>>>> eacc9ede39fe2cc86099db5240028088988ec37b
         	//sprite.translate(0,32);
         if(keycode == Input.Keys.NUM_1)
             tiledMap.getLayers().get(0).setVisible(!tiledMap.getLayers().get(0).isVisible());
