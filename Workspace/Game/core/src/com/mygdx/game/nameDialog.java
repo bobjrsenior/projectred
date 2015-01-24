@@ -17,36 +17,37 @@ import com.badlogic.gdx.files.FileHandle;
 
 public class nameDialog {
 	private String name;
-	//private String text;
-	//private int num;
-	//private Texture dialogBox;
-	//private SpriteBatch batch;
-	//private Sprite sprite;
+	private String text;
+	private int num;
+	private Texture dialogBox;
+	private SpriteBatch batch;
+	private Sprite sprite;
+	Texture rec;
 	
-	//Texture img;
-    //Texture person;
+	Texture img;
+    Texture person;
 
-    //BitmapFont font;
+    BitmapFont font;
     
-    //TiledMap tiledMap;
-    //OrthographicCamera camera;
-    //TiledMapRenderer tiledMapRenderer;
+    TiledMap tiledMap;
+    OrthographicCamera camera;
+    TiledMapRenderer tiledMapRenderer;
 
-	//Random rnd = new Random();
+	Random rnd = new Random();
 	
 	//FileReader read = new FileReader();
 	
-	//int width = (int)Gdx.graphics.getWidth();
-	//int height = (int)Gdx.graphics.getHeight()/3;
-	//int x = 0;
-	//int y = (int)(Gdx.graphics.getHeight() - height);
-	//Rectangle rec = new Rectangle(x, y, width, height);
-	
-	sprite = new Sprite(rec);
+	int width = (int)Gdx.graphics.getWidth();
+	int height = (int)Gdx.graphics.getHeight()/3;
+	int x = 0;
+	int y = (int)(Gdx.graphics.getHeight() - height);
 	
 	public nameDialog(String type)
 	{
 		name = type;
+		//Rectangle rec = new Rectangle(x, y, width, height);
+		rec = new Texture("rectangle.png");
+		sprite = new Sprite(rec);
 	}
 
 	public void getZombie()
