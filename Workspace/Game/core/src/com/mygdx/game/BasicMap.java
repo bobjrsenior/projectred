@@ -37,9 +37,9 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         camera.setToOrtho(false,w,h);
         camera.update();
         test_player = new Player(75, 50,new Texture("person.png"));
-        test_player.setCollider(15f, 15f);
+        test_player.setCollider(10f, 10f);
         test_player2 = new Player(75, 150,new Texture("person.png"));
-        test_player2.setCollider(15f, 15f);
+        test_player2.setCollider(10f, 10f);
         person = new Texture("person.png");
         sprite = new Sprite(person);
         sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
@@ -75,28 +75,28 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        if(keycode == Input.Keys.LEFT)
+        if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A)
             //camera.translate(-32,0);
         	test_player.translate(-32,0);
 	    	if(test_player.isColliding(test_player2.getCollider())){
 	    		test_player.translate(32,0);
 	    	}
         	//sprite.translate(-32,0);
-        if(keycode == Input.Keys.RIGHT)
+        if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D)
             //camera.translate(32,0);
         	test_player.translate(32,0);
 	    	if(test_player.isColliding(test_player2.getCollider())){
 	    		test_player.translate(-32,0);
 	    	}
         	//sprite.translate(32,0);
-        if(keycode == Input.Keys.UP)
+        if(keycode == Input.Keys.UP || keycode == Input.Keys.W)
             //camera.translate(0,32);
         	test_player.translate(0,32);
 	    	if(test_player.isColliding(test_player2.getCollider())){
 	    		test_player.translate(0,-32);
 	    	}
         	//sprite.translate(0,-32);
-        if(keycode == Input.Keys.DOWN)
+        if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S)
             //camera.translate(0,-32);
         	test_player.translate(0,-32);
 	    	if(test_player.isColliding(test_player2.getCollider())){

@@ -3,11 +3,10 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Circle;
-import com.badlogic.gdx.math.Intersector;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Player {
+	//Debug: Gdx.app.log("Tag", "Text");
 	
 	public float x,y;
 	
@@ -26,18 +25,27 @@ public class Player {
 	}
 
 	public Player(Texture tex) {
-		Gdx.app.log("User","Pos not set");
+		Gdx.app.log("Player","Pos not set");
 		this.x = 0;
 		this.y = 0;
 		this.tex = tex;
+		
+		collider = new Collisions();
+	}
+	
+	public void setCollider(){
+		collider.setRectangle(x, y, 10, 10);
+		has_collider = true;
 	}
 	
 	public void setCollider(float width, float height){
 		collider.setRectangle(x, y, width, height);
+		has_collider = true;
 	}
 	
 	public void setCollider(float radius){
 		collider.setCircle(x, y, radius);
+		has_collider = true;
 	}
 	
 	public void setCollider(Shape2D shape){
@@ -49,6 +57,7 @@ public class Player {
 		catch (java.lang.ClassCastException e){
 			collider.setRectangle(shape);
 		}
+		has_collider = true;
 	}
 	
 	public Shape2D getCollider(){
@@ -58,13 +67,23 @@ public class Player {
 	public void setPosition(float x, float y){
 		this.x = x;
 		this.y = y;
-		collider.setPosition(x, y);
+		if(has_collider){
+			collider.setPosition(x, y);
+		}
+		else{
+			Gdx.app.log("Player", "No Collider");
+		}
 	}
 	
 	public void translate(float x, float y){
 		this.x += x;
 		this.y += y;
-		collider.setPosition(this.x, this.y);
+		if(has_collider){
+			collider.setPosition(this.x, this.y);
+		}
+		else{
+			Gdx.app.log("Player", "No Collider");
+		}
 	}
 	
 	public boolean isColliding(Shape2D other){

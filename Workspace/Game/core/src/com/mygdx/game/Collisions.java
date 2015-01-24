@@ -7,6 +7,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Collisions {
+	//Debug: Gdx.app.log("Tag", "Text");
+	
 	
 	private Shape2D collider;
 	//true = rectangle false = circle
@@ -47,6 +49,7 @@ public class Collisions {
 			((Circle) collider).x = x;
 			((Circle) collider).y = y;
 		}
+
 	}
 	
 	public void setX(float x){
@@ -72,6 +75,7 @@ public class Collisions {
 		//catch = other = rectangle
 		try{
 			if(((Circle) other).radius != 0){
+				//true = rectangle false = circle
 				if(shape){
 					return Intersector.overlaps((Circle) other, (Rectangle) collider);
 				}
@@ -81,6 +85,7 @@ public class Collisions {
 			}
 		}
 		catch (java.lang.ClassCastException e){
+			//true = rectangle false = circle
 			if(shape){
 				return Intersector.overlaps((Rectangle) collider, (Rectangle) other);
 			}
