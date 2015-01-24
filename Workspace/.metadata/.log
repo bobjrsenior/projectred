@@ -357,3 +357,237 @@ java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfigu
 !MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
 !SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-23 18:55:53.910
 !MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SESSION 2015-01-24 01:09:25.107 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data C:\Users\MasterMatthew\Desktop\Global Game Jam\projectred\Workspace -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-01-24 01:09:27.032
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:09:29.581
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:09:29.581
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:09:29.581
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SESSION 2015-01-24 01:11:08.283 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\MasterMatthew\Desktop\Global Game Jam\projectred\Workspace -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-01-24 01:11:10.150
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:11:12.459
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:11:12.459
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-01-24 01:11:12.459
+!MESSAGE Could not load repository template extension contributed by 'org.springsource.ide.eclipse.dashboard.ui' with connectorKind 'jira'
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-01-24 01:12:57.666
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-01-24 01:12:57.667
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\MasterMatthew'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2015-01-24 01:12:57.974
+!MESSAGE Project facet jst.web has not been defined. It is used in plugin org.eclipse.jst.j2ee.
+
+!ENTRY org.springsource.ide.eclipse.gradle.core 1 0 2015-01-24 01:12:58.174
+!MESSAGE Project facet jst.web has not been defined.
+!STACK 0
+java.lang.ExceptionInInitializerError
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.springsource.ide.eclipse.gradle.core.wtp.WTPUtil.createImplementation(WTPUtil.java:253)
+	at org.springsource.ide.eclipse.gradle.core.wtp.WTPUtil.<clinit>(WTPUtil.java:248)
+	at org.springsource.ide.eclipse.gradle.core.classpathcontainer.GradleClassPathContainer.addTo(GradleClassPathContainer.java:378)
+	at org.springsource.ide.eclipse.gradle.core.GradleProject.convertToGradleProject(GradleProject.java:679)
+	at org.springsource.ide.eclipse.gradle.core.wizards.GradleImportOperation.importProject(GradleImportOperation.java:430)
+	at org.springsource.ide.eclipse.gradle.core.wizards.GradleImportOperation.perform(GradleImportOperation.java:188)
+	at org.springsource.ide.eclipse.gradle.ui.wizards.GradleImportWizard$1.doit(GradleImportWizard.java:66)
+	at org.springsource.ide.eclipse.gradle.core.util.GradleRunnable$1.run(GradleRunnable.java:53)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: Project facet jst.web has not been defined.
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectFrameworkImpl.getProjectFacet(FacetedProjectFrameworkImpl.java:234)
+	at org.eclipse.wst.common.project.facet.core.ProjectFacetsManager.getProjectFacet(ProjectFacetsManager.java:75)
+	at org.eclipse.jst.j2ee.project.facet.IJ2EEFacetConstants.<clinit>(IJ2EEFacetConstants.java:49)
+	... 11 more
+
+!ENTRY org.eclipse.core.resources 4 2 2015-01-24 01:13:00.294
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: org.eclipse.jst.j2ee.project.facet.IJ2EEFacetConstants
+	at org.eclipse.jst.j2ee.internal.common.J2EEDependencyListener.visit(J2EEDependencyListener.java:124)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at org.eclipse.jst.j2ee.internal.common.J2EEDependencyListener.resourceChanged(J2EEDependencyListener.java:103)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run(NotificationManager.java:40)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.springsource.ide.eclipse.gradle.core 4 0 2015-01-24 01:13:00.809
+!MESSAGE Compilation failed; see the compiler error output for details.
+!STACK 0
+org.gradle.tooling.BuildException: Could not execute build using Gradle distribution 'http://services.gradle.org/distributions/gradle-2.2-all.zip'.
+	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:53)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConsumerActionExecutor$1$1.run(DefaultAsyncConsumerActionExecutor.java:57)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+	at org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:71)
+	at org.springsource.ide.eclipse.gradle.core.TaskUtil.execute(TaskUtil.java:117)
+	at org.springsource.ide.eclipse.gradle.core.TaskUtil.execute(TaskUtil.java:55)
+	at org.springsource.ide.eclipse.gradle.core.TaskUtil.bulkRunTasks(TaskUtil.java:187)
+	at org.springsource.ide.eclipse.gradle.core.wizards.GradleImportOperation.doBeforeTasks(GradleImportOperation.java:280)
+	at org.springsource.ide.eclipse.gradle.core.wizards.GradleImportOperation.perform(GradleImportOperation.java:182)
+	at org.springsource.ide.eclipse.gradle.ui.wizards.GradleImportWizard$1.doit(GradleImportWizard.java:66)
+	at org.springsource.ide.eclipse.gradle.core.util.GradleRunnable$1.run(GradleRunnable.java:53)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':core:compileJava'.
+	at org.gradle.initialization.DefaultExceptionAnalyser.transform(DefaultExceptionAnalyser.java:77)
+	at org.gradle.initialization.MultipleBuildFailuresExceptionAnalyser.transform(MultipleBuildFailuresExceptionAnalyser.java:47)
+	at org.gradle.initialization.StackTraceSanitizingExceptionAnalyser.transform(StackTraceSanitizingExceptionAnalyser.java:30)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:108)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:86)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:80)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:43)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:30)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:119)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:36)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:47)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:34)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:35)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:24)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.StartStopIfBuildAndStop.execute(StartStopIfBuildAndStop.java:33)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:71)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:69)
+	at org.gradle.util.Swapper.swap(Swapper.java:38)
+	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:69)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:60)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:34)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:70)
+	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:34)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.DaemonHygieneAction.execute(DaemonHygieneAction.java:39)
+	at org.gradle.launcher.daemon.server.exec.DaemonCommandExecution.proceed(DaemonCommandExecution.java:119)
+	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:46)
+	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:246)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+Caused by: org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':core:compileJava'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:69)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.PostExecutionAnalysisTaskExecuter.execute(PostExecutionAnalysisTaskExecuter.java:35)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:64)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:305)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:88)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:62)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:68)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:62)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:55)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:149)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:106)
+	... 32 more
+Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler error output for details.
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:44)
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:35)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:97)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:50)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:36)
+	at org.gradle.api.internal.tasks.compile.CleaningJavaCompilerSupport.execute(CleaningJavaCompilerSupport.java:34)
+	at org.gradle.api.internal.tasks.compile.CleaningJavaCompilerSupport.execute(CleaningJavaCompilerSupport.java:25)
+	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.java:158)
+	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:138)
+	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:92)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:63)
+	at org.gradle.api.internal.project.taskfactory.AnnotationProcessingTaskFactory$IncrementalTaskAction.doExecute(AnnotationProcessingTaskFactory.java:235)
+	at org.gradle.api.internal.project.taskfactory.AnnotationProcessingTaskFactory$StandardTaskAction.execute(AnnotationProcessingTaskFactory.java:211)
+	at org.gradle.api.internal.project.taskfactory.AnnotationProcessingTaskFactory$IncrementalTaskAction.execute(AnnotationProcessingTaskFactory.java:222)
+	at org.gradle.api.internal.project.taskfactory.AnnotationProcessingTaskFactory$StandardTaskAction.execute(AnnotationProcessingTaskFactory.java:200)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:80)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:61)
+	... 55 more
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.090
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.actions.refresh.all
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.091
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.actions.refresh.sourcefolders
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.091
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.actions.refresh.dependencies
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.092
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.ui.actions.DisableGradleNatureAction
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.092
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.ui.EnableDisableDependencyManagementActionDelegate
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.092
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.ui.actions.EnableDisableDSLSupportDelegate
+
+!ENTRY org.eclipse.ui 4 4 2015-01-24 01:15:21.094
+!MESSAGE Plug-in 'org.springsource.ide.eclipse.gradle.ui' contributed an invalid Menu Extension (Path: 'org.springsource.ide.eclipse.gradle.menu' is invalid): org.springsource.ide.eclipse.gradle.ui.actions.Console
