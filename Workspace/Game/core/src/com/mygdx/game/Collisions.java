@@ -22,10 +22,20 @@ public class Collisions {
 		shape = true;
 	}
 	
+	public void setRectangle(Shape2D other){
+		collider = new Rectangle((Rectangle) other);
+		shape = true;
+	}
+	
 	public void setCircle(float x, float y, float radius){
 		collider = new Circle();
 		((Circle) collider).set(x, y, radius);
 		shape = false;
+	}
+	
+	public void setCircle(Shape2D other){
+		collider = new Circle((Circle) other);
+		shape = true;
 	}
 	
 	public void setPosition(float x, float y){
@@ -58,6 +68,8 @@ public class Collisions {
 	}
 	
 	public boolean isColliding(Shape2D other){
+		//try = other = circle
+		//catch = other = rectangle
 		try{
 			if(((Circle) other).radius != 0){
 				if(shape){
