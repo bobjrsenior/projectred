@@ -42,7 +42,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor {
         camera.setToOrtho(false,w,h);
         camera.update();
         
-        player = new Player(75, 50,new Texture("person.png"));
+        player = new Player(75, 50,new Texture("player.png"));
         player.setCollider(10f, 10f);
         
         test_player2 = new NPC(75, 150,new Texture("person.png"));
