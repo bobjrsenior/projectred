@@ -2,13 +2,14 @@ package com.mygdx.game;
 
 import java.util.Random;
 
-import jdk.nashorn.tools.Shell;
-
-import org.eclipse.swt.widgets.Display;
-
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;
@@ -23,8 +24,14 @@ public class Dialog
 	private SpriteBatch batch;
 	private Sprite sprite;
 	
-	Display dp = new Display();
-	Shell shell = new Shell(dp);
+	Texture img;
+    Texture person;
+
+    BitmapFont font;
+    
+    TiledMap tiledMap;
+    OrthographicCamera camera;
+    TiledMapRenderer tiledMapRenderer;
 
 	Random rnd = new Random();
 	
@@ -33,7 +40,7 @@ public class Dialog
 	int width = (int)Gdx.graphics.getWidth();
 	int height = (int)Gdx.graphics.getHeight()/3;
 	int x = 0;
-	int y = (int)Gdx.graphics.getHeight() - height;
+	int y = (int)(Gdx.graphics.getHeight() - height);
 	Rectangle rec = new Rectangle(x, y, width, height);
 	
 	sprite = new Sprite(rec);
@@ -73,10 +80,17 @@ public class Dialog
 		}	
 	}
 	
-	public String write()
+	public void create(){
+		font = new BitmapFont();
+        font.setColor(Color.GREEN);
+	}
+	
+	
+	public void render()
 	{
 		batch.begin();
 		sprite.draw(batch);
+		font.draw(batch, text, 50, 200);
 		batch.end();
 	}
 
