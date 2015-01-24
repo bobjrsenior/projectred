@@ -10,17 +10,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 	
-	Scanner scan = new Scanner(System.in);
-	boolean con = true; //continue
+
+
 	
-	//Title screen
-	
-	
-	//Talk
-	//visible textbox and namebox
-	
-	//get text
-	
-	//invisible textbox and namebox
+
 	
 }

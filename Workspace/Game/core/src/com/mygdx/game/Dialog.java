@@ -2,16 +2,16 @@ package com.mygdx.game;
 
 import java.util.Random;
 
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.*;
-import org.eclipse.swt.graphics.*;
-import org.eclipse.swt.widgets.*;
+import jdk.nashorn.tools.Shell;
+
+import org.eclipse.swt.widgets.Display;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.files.FileHandle;
 
 public class Dialog 
@@ -22,6 +22,9 @@ public class Dialog
 	private Texture dialogBox;
 	private SpriteBatch batch;
 	private Sprite sprite;
+	
+	Display dp = new Display();
+	Shell shell = new Shell(dp);
 
 	Random rnd = new Random();
 	
@@ -33,7 +36,7 @@ public class Dialog
 	int y = (int)Gdx.graphics.getHeight() - height;
 	Rectangle rec = new Rectangle(x, y, width, height);
 	
-	Sprite = new sprite(rec);
+	sprite = new Sprite(rec);
 	
 	public Dialog(String type)
 	{
@@ -74,7 +77,6 @@ public class Dialog
 	{
 		batch.begin();
 		sprite.draw(batch);
-		
 		batch.end();
 	}
 
