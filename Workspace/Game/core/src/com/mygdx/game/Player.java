@@ -20,7 +20,6 @@ public class Player extends Character implements InputProcessor{
 	
 	@Override
 	public boolean keyUp(int keycode){
-		Gdx.app.log("Player", "" + x + " : " + y);
 		boolean hitting = false;
         if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
         	translate(-tilesize,0);
