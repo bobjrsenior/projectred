@@ -25,4 +25,6 @@
 <fullyQualifiedTypeName name="com.mygdx.game.Building"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
 <fullyQualifiedTypeName name="com.mygdx.game.nameDialog"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.Config"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration"/>
 </qualifiedTypeNameHistroy>

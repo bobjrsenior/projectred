@@ -15,7 +15,7 @@ import com.badlogic.gdx.Game;
              mainMenuScreen = new TitleScreen(this);
              basicMapScreen = new BasicMap(this);
              indoorScreen = new Indoors(this);
-             setScreen(mainMenuScreen);   
+             setScreen(basicMapScreen);   
          }
   }
 

@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Buildings Layer" key="selection"/>
+		<item value="Character.tilesize" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Player.p.tilesize"/>
+			<item value="tile"/>
 			<item value="Buildings Layer"/>
 			<item value="buildings"/>
 			<item value="grave"/>
 			<item value="tiledMap"/>
 			<item value="select"/>
 			<item value="cam"/>
-			<item value="add"/>
-			<item value="isColliding"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Character.tilesize"/>
 			<item value="isCollidingEnemy"/>
 			<item value="isColliding"/>
 			<item value="translate"/>

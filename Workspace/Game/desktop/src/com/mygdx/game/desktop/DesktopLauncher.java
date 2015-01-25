@@ -28,8 +28,8 @@ public class DesktopLauncher {
 		//new LwjglApplication(new MyGdxGame(), config);
 		config.title = "WhatDo?";
 		config.fullscreen = true;
-		//config.width = 1920;
-		//config.height = 1080;
+		config.width = 1920;
+		config.height = 1080;
 		new LwjglApplication(new SceneManager(), config);
 	}
 }
