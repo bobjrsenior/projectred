@@ -20,4 +20,5 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.maps.objects.RectangleMapObject"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.maps.MapObjects"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.mygdx.game.nameDialog"/>
 </qualifiedTypeNameHistroy>
