@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="13">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="24">
  <tileset firstgid="1" name="EW Road" tilewidth="32" tileheight="32">
   <image source="road/EW.png" width="128" height="128"/>
  </tileset>
@@ -3275,9 +3275,12 @@
  </layer>
  <objectgroup name="Object Layer 1">
   <object id="9" name="Test Gravestone" gid="1185" x="5312" y="16640"/>
-  <object id="11" gid="1181" x="5248" y="16640"/>
-  <object id="12" name="Invidible Wall" x="4576" y="16352" width="576" height="512"/>
  </objectgroup>
  <objectgroup name="Item Layer"/>
- <objectgroup name="Character Layer"/>
+ <objectgroup name="Character Layer">
+  <object id="14" name="Player" gid="1786" x="5344" y="16864"/>
+  <object id="21" name="Zombie" gid="1787" x="5408" y="16864"/>
+  <object id="22" name="Zombie" gid="1787" x="5408" y="16832"/>
+  <object id="23" name="Zombie" gid="1787" x="5408" y="16800"/>
+ </objectgroup>
 </map>

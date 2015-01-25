@@ -37,6 +37,7 @@ public class Character {
 		sprite.setPosition(x, y);
 		*/
 		collider = new Collisions();
+		setCollider(32, 32);
 	}
 
 	public Character(Texture tex) {

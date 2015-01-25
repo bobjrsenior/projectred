@@ -12,7 +12,7 @@ import com.mygdx.game.Character.Player;
 public class Enemy extends Character{
 	//Debug: Gdx.app.log("Enemy", "Text");
 
-	public boolean following;
+	public boolean following = false;
 	public Character follow;
 	//In steps per second
 	public float followspeed = 2;
@@ -29,7 +29,6 @@ public class Enemy extends Character{
 	
 	public Enemy(float x, float y){
 		super(x,y);
-		tex = new Texture("People/zombie.png");
 		char_index = addCharacter(this);
 		startWander();
 	}

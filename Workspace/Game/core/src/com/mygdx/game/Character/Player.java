@@ -15,6 +15,9 @@ import com.mygdx.game.Character.NPC.NPC;
 public class Player extends Character implements InputProcessor{
 	//Debug: Gdx.app.log("Player", "Text");
 	
+	public static Player p;
+	
+	
 	public Inventory inventory;
 	
 	public int thirst;
@@ -22,6 +25,7 @@ public class Player extends Character implements InputProcessor{
 	
 	public Player(float x, float y) {
 		super(x, y);
+		p = this;
 		tex = new Texture("People/Player.png");
 		char_index = addCharacter(this);
 		inventory = new Inventory();

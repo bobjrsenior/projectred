@@ -47,24 +47,25 @@ public class Renderer {
 	
 	public void Render(){
 		
-		for(int i = 0; i < characterRenders.size()-1; i++){
+		for(int i = 0; i < characterRenders.size(); i++){
 			Character c = characterRenders.get(i);
 			c.update();	
 		}
+		//System.out.println(characterRenders.size());
 		
 		batch.begin();
 		
-		for(int i = 0; i < itemRenders.size()-1; i++){
+		for(int i = 0; i < itemRenders.size(); i++){
 			Item j = itemRenders.get(i);
 			j.sprite.draw(batch);
 		}
 		
-		for(int i = 0; i < characterRenders.size()-1; i++){
+		for(int i = 0; i < characterRenders.size(); i++){
 			Character c = characterRenders.get(i);
 			batch.draw(c.tex, c.x + BasicMap.camoffset.x, c.y + BasicMap.camoffset.y);	
 		}
 		
-		for(int i = 0; i < obstacleRenders.size()-1; i++){
+		for(int i = 0; i < obstacleRenders.size(); i++){
 			Obstacle o = obstacleRenders.get(i);
 			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
 		}

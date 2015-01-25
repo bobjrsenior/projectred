@@ -34,8 +34,9 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     SpriteBatch batch;
     Sprite sprite;
     Renderer renderer;
+    Spawner spawner;
     
-    TiledMap tiledMap;
+    static TiledMap tiledMap;
     OrthographicCamera camera;
     TiledMapRenderer tiledMapRenderer;
     
@@ -44,13 +45,10 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     static Vector3 initialcampos;
     static Vector3 camoffset;
     
-    Player player;
     
     //NPC test_player2;
-    Human npc;
     
     //Player test_player;
-    Enemy test_npc;
     
     SceneManager game;
     
@@ -71,35 +69,39 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         camera.setToOrtho(false,w,h);
         camera.update();
         
+        tiledMap = new TmxMapLoader().load("Map/map2.tmx");
+        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+        //tileTest();
+        
+        spawner = new Spawner();
+        /*
         player = new Player(5312, 4672);
         player.setCollider(15f, 15f);
-        
+        */
         //test_player2.startFollow(player);
-        
 
         //test_player = new Player(75, 50,new Texture("person.png"));
         //test_player.setCollider(15f, 15f);
-        test_npc = new Enemy(75, 350);
-        test_npc.setCollider(15f, 15f);
-        test_npc.startFollow(player);
+       // test_npc = new Enemy(75, 350);
+       // test_npc.setCollider(15f, 15f);
+        //test_npc.startFollow(player);
 
-        person = new Texture("People/person.png");
+        //person = new Texture("People/person.png");
         //sprite = new Sprite(person);
         //sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
-        tiledMap = new TmxMapLoader().load("Map/map2.tmx");
-        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
-        tileTest();
         Gdx.input.setInputProcessor(this);
         
-    	InputProcessor inputProcessorOne = player;
+    	InputProcessor inputProcessorOne = Player.p;
     	InputProcessor inputProcessorTwo = this;
     	InputMultiplexer inputMultiplexer = new InputMultiplexer();
     	inputMultiplexer.addProcessor(inputProcessorOne);
     	inputMultiplexer.addProcessor(inputProcessorTwo);
+    	
     	Gdx.input.setInputProcessor(inputMultiplexer);
     	
     	initialcampos = new Vector3(camera.position);
     	camoffset = new Vector3(0,0,0);
+    	new nameDialog();
     }
     
     public void dispose() {
@@ -116,7 +118,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     	*/
     	
     	//Make the camera centered around the player
-    	Vector3 translation = new Vector3(player.x - camera.position.x,player.y - camera.position.y,0);
+    	Vector3 translation = new Vector3(Player.p.x - camera.position.x,Player.p.y - camera.position.y,0);
     	camera.translate(translation);
     	//Figure out how much the camera moved from it's original position
     	camoffset = new Vector3(initialcampos.x - camera.position.x, initialcampos.y - camera.position.y,0);
@@ -157,6 +159,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     	MapObjects test = tiledMap.getLayers().get("Object Layer 1").getObjects();
     	
 		for(MapObject tile : test){
+			//tile.getName()
 			System.out.println(tile.getName());
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
