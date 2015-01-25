@@ -1,7 +1,6 @@
 package com.mygdx.game.Items;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class Bread extends Food{
 	

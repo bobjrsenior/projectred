@@ -2,7 +2,6 @@ package com.mygdx.game;
 
 import java.util.Random;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -51,14 +50,14 @@ public class Spawner {
 				Spawn(tile.getName(), rec.x , rec.y);
 			}
 		}
-		/*
+		
 		test = BasicMap.tiledMap.getLayers().get("Blockade").getObjects();
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
 				Spawn(tile.getName(), rec.x , rec.y, rec.width, rec.height);
 			}
-		}*/
+		}
 	}
 	
 	

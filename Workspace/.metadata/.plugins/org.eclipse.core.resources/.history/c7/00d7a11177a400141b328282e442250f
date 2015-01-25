@@ -1,0 +1,14 @@
+package com.mygdx.game.Character.NPC;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Cow extends NPC{
+
+	public Cow(float x, float y) {
+		super(x, y);
+		tex = new Texture("People/Cow.png");
+		char_index = addCharacter(this);
+		//getDialog();
+	}
+
+}

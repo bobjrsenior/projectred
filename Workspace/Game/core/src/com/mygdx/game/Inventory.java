@@ -32,11 +32,11 @@ public class Inventory {
 			if (inventory.get(i) == item)
 			{
 				item.eat(person);
-				}
 				inventory.remove(i);
 				text = "Used " + item;
 				return text;
-			}
+			}	
+		}
 		
 		return "none";
 	}

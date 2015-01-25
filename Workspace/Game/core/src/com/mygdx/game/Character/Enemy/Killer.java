@@ -1,11 +1,9 @@
 package com.mygdx.game.Character.Enemy;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.Spawner;
 import com.mygdx.game.nameDialog;
 import com.mygdx.game.Character.Character;
-import com.mygdx.game.Character.Player;
 import com.mygdx.game.Character.NPC.Alien;
 
 public class Killer extends Enemy{

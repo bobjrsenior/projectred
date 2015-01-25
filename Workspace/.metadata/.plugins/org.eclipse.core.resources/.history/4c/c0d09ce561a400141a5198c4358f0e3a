@@ -1,0 +1,82 @@
+package com.mygdx.game;
+
+import java.util.ArrayList;
+
+//import javax.xml.stream.events.Characters;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.Items.Item;
+
+public class Renderer {
+	ArrayList<Item> itemRenders;
+	ArrayList<Character> characterRenders;
+	ArrayList<Obstacle> obstacleRenders;
+	ArrayList<String> dialogRenders;
+	
+	SpriteBatch batch;
+	
+	public Renderer(){
+		
+		batch = new SpriteBatch();
+		
+		itemRenders = Item.items;
+		characterRenders = Character.characters;
+		obstacleRenders = Obstacle.obstacles;
+		dialogRenders = nameDialog.dialog.output;
+	}
+	
+	public void Dispose(){
+		for(int i = 0; i < itemRenders.size()-1; i++){
+			Item j = itemRenders.get(i);
+			j.img.dispose();
+		}
+		
+		for(int i = 0; i < characterRenders.size()-1; i++){
+			Character c = characterRenders.get(i);
+			c.tex.dispose();
+		}
+		
+		for(int i = 0; i < obstacleRenders.size()-1; i++){
+			Obstacle o = obstacleRenders.get(i);
+			o.tex.dispose();
+		}
+		batch.dispose();
+	}
+	
+	public void Render(){
+		
+		for(int i = 0; i < characterRenders.size()-1; i++){
+			Character c = characterRenders.get(i);
+			c.update();	
+		}
+		
+		batch.begin();
+		
+		for(int i = 0; i < itemRenders.size()-1; i++){
+			Item j = itemRenders.get(i);
+			j.sprite.draw(batch);
+		}
+		
+		for(int i = 0; i < characterRenders.size()-1; i++){
+			Character c = characterRenders.get(i);
+			batch.draw(c.tex, c.x + BasicMap.camoffset.x, c.y + BasicMap.camoffset.y);	
+		}
+		
+		for(int i = 0; i < obstacleRenders.size()-1; i++){
+			Obstacle o = obstacleRenders.get(i);
+			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
+		}
+		
+		
+		String text = "";
+		for(String s : dialogRenders){
+			text += s + '\n';
+		}
+		
+		nameDialog.dialog.font.draw(batch, text, nameDialog.dialog.x, nameDialog.dialog.y);
+		
+		batch.end();
+	}
+	
+
+}

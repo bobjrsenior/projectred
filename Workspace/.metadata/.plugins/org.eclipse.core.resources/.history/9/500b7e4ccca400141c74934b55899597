@@ -1,0 +1,83 @@
+package com.mygdx.game;
+
+import java.util.ArrayList;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Shape2D;
+
+public class Obstacle {
+
+	public static ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
+	public static ArrayList<Obstacle> hiddenobstacles = new ArrayList<Obstacle>();
+	public int char_index;
+	
+	public int tilesize = 32;
+	
+	public int health = 100;
+	public float x,y;
+	
+	public Texture tex;
+	
+	private Collisions collider;
+	public boolean has_collider = false;
+	
+	public Obstacle(float x, float y, Texture tex) {
+		this.x = x;
+		this.y = y;
+		this.tex = tex;
+		
+		collider = new Collisions();
+	}
+	
+	public Obstacle(float x, float y) {
+		this.x = x;
+		this.y = y;
+		
+		collider = new Collisions();
+	}
+
+	public Obstacle(Texture tex) {
+		Gdx.app.log("Obstacle","Pos not set");
+		this.x = 0;
+		this.y = 0;
+		this.tex = tex;
+		
+		collider = new Collisions();
+	}
+	
+	public int addObstacle(Obstacle o){
+		obstacles.add(o);
+		return obstacles.size() - 1;
+	}
+	
+	public int addHiddenObstacle(Obstacle o){
+		hiddenobstacles.add(o);
+		return hiddenobstacles.size() - 1;
+	}
+	
+	public void setCollider(){
+		collider.setRectangle(x, y, 10, 10);
+		has_collider = true;
+	}
+	
+	public void setCollider(float width, float height){
+		collider.setRectangle(x, y, width, height);
+		has_collider = true;
+	}
+	
+	public void setCollider(float radius){
+		collider.setCircle(x, y, radius);
+		has_collider = true;
+	}
+	
+	public void setCollider(Shape2D shape){
+		collider.setRectangle(shape);
+		has_collider = true;
+	}
+	
+	public Shape2D getCollider(){
+		return collider.getCollider();
+	}
+}

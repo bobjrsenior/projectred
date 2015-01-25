@@ -1,6 +1,5 @@
 package com.mygdx.game.Character.NPC;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.mygdx.game.nameDialog;
 import com.mygdx.game.Character.Player;

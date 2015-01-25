@@ -1,0 +1,146 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
+
+public class Building extends Obstacle{
+
+	int obs_index;
+	
+	public Building(float x, float y, Texture tex) {
+		super(x, y, tex);
+		
+		obs_index = addObstacle(this);
+	}
+	
+	public Building(float x, float y) {
+		super(x, y);
+		
+		obs_index = addObstacle(this);
+	}
+	
+	public Building(float x, float y, float width, float height){
+		super(x, y);
+		System.out.println("G");
+		obs_index = addHiddenObstacle(this);
+		setCollider(new Rectangle(x,y,width,height));
+	}
+	
+	public void setColliderBuilding(){
+		setCollider(new Rectangle(x,y,320,320));
+	}
+	
+	public void setColliderHouse(){
+		setCollider(new Rectangle(x,y,320,320));
+		tex = new Texture("Map/buildings/House.png");
+	}
+	
+	public void setColliderFactory(){
+		setCollider(new Rectangle(x,y,640,320));
+		tex = new Texture("Map/buildings/factory.png");
+	}
+	
+	public void setColliderCourt(){
+		setCollider(new Rectangle(x,y,640,320));
+		tex = new Texture("Map/buildings/courthouse.png");
+	}
+	
+	public void setColliderSchool(){
+		setCollider(new Rectangle(x,y,640,320));
+		tex = new Texture("Map/buildings/school.png");
+		
+	}
+	
+	public void setColliderStore(){
+		setCollider(new Rectangle(x,y,640,320));
+	}
+	
+	public void setColliderGrave(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/objects/gravestone.png");
+	}
+	
+	public void setColliderTree(){
+		setCollider(new Rectangle(x,y,32,64));
+		tex = new Texture("Map/objects/tree.png");
+	}
+	
+	public void setColliderWater(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/terrain/water.png");
+	}
+	
+	public void setColliderStone(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/walls/stone.png");
+	}
+	
+	public void setColliderWooden(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/walls/wooden.png");
+	}
+	
+	public void setColliderChair(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/chair.png");
+	}
+	
+	public void setColliderChurchBench(){
+		setCollider(new Rectangle(x,y,64,32));
+		tex = new Texture("Map/furniture/churchBench.png");
+	}
+	
+	public void setColliderTableE(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/E bigtable.png");
+	}
+	
+	public void setColliderTableEW(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/EW bigtable.png");
+	}
+	
+	public void setColliderTableN(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/N bigtable.png");
+	}
+	
+	public void setColliderTableNS(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/NS bigtable.png");
+	}
+	
+	public void setColliderTableS(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/S bigtable.png");
+	}
+	
+	public void setColliderTableW(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/W bigtable.png");
+	}
+	
+	public void setColliderStairsEW(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/EW stairs.png");
+	}
+	
+	public void setColliderStairsNS(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/NS stairs.png");
+	}
+	
+	public void setColliderPew(){
+		setCollider(new Rectangle(x,y,32,32));
+		tex = new Texture("Map/furniture/pew.png");
+	}
+	
+	public void setColliderTile(){
+		setCollider(new Rectangle(x,y,32,32));
+	}
+	
+	public void setColliderFence(){
+		setCollider(new Rectangle(x,y,64,64));
+	}
+
+}

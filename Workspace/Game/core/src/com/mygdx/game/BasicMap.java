@@ -16,17 +16,12 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
-import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.Character.Player;
-import com.mygdx.game.Character.Enemy.Enemy;
-import com.mygdx.game.Character.NPC.Human;
-import com.mygdx.game.Character.NPC.NPC;
 
 public class BasicMap extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;
@@ -185,6 +180,8 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
             tiledMap.getLayers().get(0).setVisible(!tiledMap.getLayers().get(0).isVisible());
         if(keycode == Input.Keys.NUM_2)
             tiledMap.getLayers().get(1).setVisible(!tiledMap.getLayers().get(1).isVisible());
+        if(keycode == Input.Keys.ESCAPE)
+        	Gdx.app.exit();
         return false;
     }
 

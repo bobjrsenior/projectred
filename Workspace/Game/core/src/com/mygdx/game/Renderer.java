@@ -24,7 +24,7 @@ public class Renderer {
 		itemRenders = Item.items;
 		characterRenders = Character.characters;
 		obstacleRenders = Obstacle.obstacles;
-		dialogRenders = nameDialog.dialog.output;
+		dialogRenders = nameDialog.output;
 	}
 	
 	public void Dispose(){
@@ -75,14 +75,7 @@ public class Renderer {
 			Obstacle o = obstacleRenders.get(i);
 			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
 		}
-		/*
-		for(int i = 0; i < corpseRenders.size(); i++){
-			Corpse o = corpseRenders.get(i);
-			o.corpseTimer++;
-			if(o.corpseTimer>=200) o.tex.dispose();
-			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
-		}
-		*/
+
 		String text = "";
 		for(String s : dialogRenders){
 			text += s + "\n";

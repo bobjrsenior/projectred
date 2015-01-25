@@ -1,0 +1,38 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
+
+public class Building extends Obstacle{
+
+	int obs_index;
+	
+	public Building(float x, float y, Texture tex) {
+		super(x, y, tex);
+		
+		obs_index = addObstacle(this);
+	}
+	
+	public Building(float x, float y) {
+		super(x, y);
+		
+		obs_index = addObstacle(this);
+	}
+	
+	public void setColliderBuilding(){
+		setCollider(new Rectangle(x,y,320,320));
+	}
+	
+	public void setColliderTile(){
+		setCollider(new Rectangle(x,y,32,32));
+	}
+	
+	public void setColliderFence(){
+		setCollider(new Rectangle(x,y,64,64));
+	}
+	
+	public void setColliderWide(){
+		setCollider(new Rectangle(x,y,640,320));
+	}
+
+}

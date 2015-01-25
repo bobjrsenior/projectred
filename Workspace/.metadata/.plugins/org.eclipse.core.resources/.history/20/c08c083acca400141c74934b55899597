@@ -1,0 +1,23 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.g3d.particles.batches.BillboardParticleBatch.Config;
+
+ public class SceneManager extends Game {
+
+         TitleScreen mainMenuScreen;
+         BasicMap basicMapScreen;
+         Indoors indoorScreen;
+         public static SceneManager g;
+
+        @Override
+         public void create() {
+        	 g=this;
+        	 g.resize(1280, 720);
+             mainMenuScreen = new TitleScreen(this);
+             basicMapScreen = new BasicMap(this);
+             indoorScreen = new Indoors(this);
+             setScreen(mainMenuScreen);   
+         }
+  }
+

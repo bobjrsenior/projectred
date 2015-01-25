@@ -4,8 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Circle;
-import com.badlogic.gdx.math.Shape2D;
 import com.mygdx.game.Inventory;
 import com.mygdx.game.Obstacle;
 import com.mygdx.game.nameDialog;
@@ -73,7 +71,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[0] = 0;
 	        	translate(-tilesize,0);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Character.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(tilesize,0);
 			    		hit(e);
 			    		hitting = true;
@@ -82,7 +80,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(tilesize,0);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -92,7 +90,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
 	    		    		translate(tilesize,0);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -108,7 +106,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[1] = 0;
 	        	translate(tilesize,0);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Character.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(-tilesize,0);
 			    		hit(e);
 			    		hitting = true;
@@ -117,7 +115,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(-tilesize,0);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -127,7 +125,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
 	    		    		translate(-tilesize,0);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -143,7 +141,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[2] = 0;
 	        	translate(0,tilesize);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Character.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(0,-tilesize);
 			    		hit(e);
 			    		hitting = true;
@@ -152,7 +150,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,-tilesize);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -162,7 +160,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
 	    		    		translate(0,-tilesize);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -178,7 +176,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[3] = 0;
 	        	translate(0,-tilesize);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Character.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(0,tilesize);
 			    		hit(e);
 			    		hitting = true;
@@ -187,7 +185,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,tilesize);
 	    		    		hitOb(e);
 	    		    		hitting = true;
@@ -197,7 +195,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
-	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Character.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
 	    		    		translate(0,tilesize);
 	    		    		hitOb(e);
 	    		    		hitting = true;
