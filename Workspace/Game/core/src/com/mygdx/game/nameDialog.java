@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -14,11 +15,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 
 public class nameDialog {
+	public static nameDialog dialog;
+	public static ArrayList<String> output = new ArrayList<String>();
+
 	private String name;
-	private String text;
+	public String text;
+	private String[] lines;
 	private int num;
-	private SpriteBatch batch;
 	private Sprite sprite;
+	
+	
 	Texture rec;
 	
 	Texture img;
@@ -30,51 +36,52 @@ public class nameDialog {
     OrthographicCamera camera;
     TiledMapRenderer tiledMapRenderer;
 
-	Random rnd = new Random();
+	Random rnd = new Random(System.nanoTime());
 	
 	//FileReader read = new FileReader();
 	
 	int width = (int)Gdx.graphics.getWidth();
 	int height = (int)Gdx.graphics.getHeight()/3;
-	int x = 0;
+	int x = (int)(Gdx.graphics.getHeight() - height);
 	int y = (int)(Gdx.graphics.getHeight() - height);
 	
-	public nameDialog(String type)
+	public nameDialog()
 	{
-		name = type;
-		//Rectangle rec = new Rectangle(x, y, width, height);
-		rec = new Texture("rectangle.png");
-		sprite = new Sprite(rec);
+		dialog = this;
+		//name = type;
+		create();
 	}
 
 	public void getZombie()
 	{
 		num = rnd.nextInt();
-		FileHandle file = Gdx.files.internal("minor(Zombie).txt");
-		for (int i = 0; i < num; i++)
-		{
-			text = file.readString();
-		}		
+		FileHandle file = Gdx.files.internal("Scripts/minor(Zombie).txt");
+		lines = file.readString().split("[\n]");
+		output.add(lines[rnd.nextInt(lines.length)]);
 	}
 	
 	public void getAlien()
 	{
-		num = rnd.nextInt();
-		FileHandle file = Gdx.files.internal("minor(Alien).txt");
-		for (int i = 0; i < num; i++)
-		{
-			text = file.readString();
-		}	
+		FileHandle file = Gdx.files.internal("Scripts/minor(Alien)");
+		lines = file.readString().split("[\n]");
+		output.add(lines[rnd.nextInt(lines.length)]);
+		
 	}
 	
 	public void getHuman()
 	{
 		num = rnd.nextInt();
-		FileHandle file = Gdx.files.internal("minor(Human).txt");
-		for (int i = 0; i < num; i++)
-		{
-			text = file.readString();
-		}	
+		FileHandle file = Gdx.files.internal("Scripts/minor(Human).txt");
+		lines = file.readString().split("[\n]");
+		output.add(lines[rnd.nextInt(lines.length)]);
+	}
+	
+	public void addLine(String line){
+		output.add(line);
+	}
+	
+	public void clear(){
+		output.clear();
 	}
 	
 	public void create(){
@@ -83,11 +90,11 @@ public class nameDialog {
 	}
 	
 	
-	public void render()
+	public void render(SpriteBatch batch)
 	{
 		batch.begin();
-		sprite.draw(batch);
-		font.draw(batch, text, 50, 200);
+		//sprite.draw(batch);
+		font.draw(batch, text, x, y);
 		batch.end();
 	}
 

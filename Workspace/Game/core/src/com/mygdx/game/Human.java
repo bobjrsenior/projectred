@@ -13,6 +13,11 @@ public class Human extends NPC{
 		//getDialog();
 	}
 	
+	public Human(float x, float y) {
+		super(x, y, new Texture("Player.png"));
+		char_index = addCharacter(this);
+	}
+	
 	public void getDialog(){
 		//dialog.getHuman();
 		//dialog.create();

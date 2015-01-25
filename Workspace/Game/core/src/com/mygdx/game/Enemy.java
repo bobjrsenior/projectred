@@ -30,6 +30,12 @@ public class Enemy extends Character{
 		startWander();
 	}
 	
+	public Enemy(float x, float y){
+		super(x,y,new Texture("zombie.png"));
+		char_index = addCharacter(this);
+		startWander();
+	}
+	
 	@Override
 	public void update(){
 		super.update();

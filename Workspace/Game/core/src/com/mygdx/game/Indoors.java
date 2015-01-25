@@ -62,7 +62,7 @@ public class Indoors extends ApplicationAdapter implements InputProcessor, Scree
         person = new Texture("person.png");
         //sprite = new Sprite(person);
         //sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
-        tiledMap = new TmxMapLoader().load("Map/insideMap.tmx");
+        tiledMap = new TmxMapLoader().load("Map/indoorsMap.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
         Gdx.input.setInputProcessor(this);
         

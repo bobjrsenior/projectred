@@ -8,5 +8,10 @@ public class Alien extends NPC{
 		super(x, y, tex);
 		char_index = addCharacter(this);
 	}
+	
+	public Alien(float x, float y) {
+		super(x, y, new Texture("alienfriend.png"));
+		char_index = addCharacter(this);
+	}
 
 }
