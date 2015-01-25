@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.math.Rectangle;
 import com.mygdx.game.Character.Player;
 import com.mygdx.game.Character.Enemy.Zombie;
+import com.mygdx.game.Character.NPC.Cow;
 
 public class Spawner {
 	
@@ -38,6 +39,7 @@ public class Spawner {
 		switch(object){
 		case "Player":	new Player(PosX,PosY); System.out.println("You did it hurray"); break;
 		case "Zombie":	new Zombie(PosX,PosY); break;
+		case "Cow":	new Cow(PosX,PosY); break;
 		case "House": Building temp = new Building(PosX,PosY); temp.setColliderHouse();break;
 		default: System.out.println("Didn't work");
 		}
