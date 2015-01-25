@@ -15,10 +15,22 @@ public class Player extends Character implements InputProcessor{
 	public int thirst;
 	public int hunger;
 	
-	public Player(float x, float y, Texture tex) {
-		super(x, y, tex);
+	public Player(float x, float y) {
+		super(x, y);
 		char_index = addCharacter(this);
 		inventory = new Inventory();
+		hunger = 100;
+		thirst = 100;
+	}
+	
+	public void eat(int nutrition){
+		hunger += nutrition;
+		if(hunger > 100) hunger = 100;	
+	}
+	
+	public void drink(int quench){
+		hunger += quench;
+		if(thirst > 100) thirst = 100;	
 	}
 	
 	public Player(float x, float y) {

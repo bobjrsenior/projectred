@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 import com.badlogic.gdx.math.Vector2;
 
 public class Character {
 	//Debug: Gdx.app.log("Character", "Text");
+	Sprite sprite;
 	
 	public static ArrayList<Character> characters = new ArrayList<Character>();
 	public int char_index;
@@ -25,11 +27,14 @@ public class Character {
 	public boolean has_collider = false;
 	
 	
-	public Character(float x, float y, Texture tex) {
+	public Character(float x, float y) {
 		this.x = x;
 		this.y = y;
-		this.tex = tex;
 		
+		/*
+		sprite = new Sprite(tex);
+		sprite.setPosition(x, y);
+		*/
 		collider = new Collisions();
 	}
 
