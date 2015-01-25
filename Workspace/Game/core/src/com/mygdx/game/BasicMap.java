@@ -101,8 +101,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     }
     
     public void dispose() {
-    	batch.dispose();
-    	person.dispose();
+    	renderer.Dispose();
     }
 
     @Override

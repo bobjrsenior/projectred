@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.mygdx.game.Character;
 
 public class Item {
-	Texture img;
+	public Texture img;
 	public Sprite sprite;
 	
 	public static ArrayList<Item> items = new ArrayList<Item>();
