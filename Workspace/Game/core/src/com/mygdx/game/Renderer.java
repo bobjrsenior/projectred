@@ -27,6 +27,24 @@ public class Renderer {
 		
 	}
 	
+	public void Dispose(){
+		for(int i = 0; i < itemRenders.size()-1; i++){
+			Item j = itemRenders.get(i);
+			j.img.dispose();
+		}
+		
+		for(int i = 0; i < characterRenders.size()-1; i++){
+			Character c = characterRenders.get(i);
+			c.tex.dispose();
+		}
+		
+		for(int i = 0; i < obstacleRenders.size()-1; i++){
+			Obstacle o = obstacleRenders.get(i);
+			o.tex.dispose();
+		}
+		batch.dispose();
+	}
+	
 	public void Render(){
 		
 		for(int i = 0; i < characterRenders.size()-1; i++){
