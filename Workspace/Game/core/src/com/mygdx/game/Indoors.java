@@ -55,7 +55,7 @@ public class Indoors extends ApplicationAdapter implements InputProcessor, Scree
         camera.setToOrtho(false,w,h);
         camera.update();
         
-        player = new Player(75, 50,new Texture("player.png"));
+        player = new Player(-100, -100);
         player.setCollider(15f, 15f);
         
 
