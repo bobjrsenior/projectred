@@ -31,8 +31,6 @@ public class TitleScreen implements InputProcessor, Screen{
 	}
 	
 	public void create() {
-		//float h = Gdx.graphics.getHeight();
-		//float w = Gdx.graphics.getWidth();
 		batch = new SpriteBatch();
 		
 		title = new Texture("title/menu.png");
@@ -66,7 +64,6 @@ public class TitleScreen implements InputProcessor, Screen{
 			game.setScreen(game.basicMapScreen);
 		if(screenX < 256 && screenX > 96 && screenY < 448 && screenY >416)  //Close button
 			Gdx.app.exit();
-			//dispose();
         return true;
     }
 	 @Override

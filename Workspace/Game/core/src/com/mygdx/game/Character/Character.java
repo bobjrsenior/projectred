@@ -32,10 +32,6 @@ public class Character {
 		this.x = x;
 		this.y = y;
 		
-		/*
-		sprite = new Sprite(tex);
-		sprite.setPosition(x, y);
-		*/
 		collider = new Collisions();
 		setCollider(32, 32);
 	}

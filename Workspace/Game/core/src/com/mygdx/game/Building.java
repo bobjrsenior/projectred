@@ -22,7 +22,7 @@ public class Building extends Obstacle{
 	public Building(float x, float y, float width, float height){
 		super(x, y);
 		obs_index = addHiddenObstacle(this);
-		setCollider(new Rectangle(x,y,width,height));
+		setCollider(width,height);
 	}
 	
 	public void setColliderBuilding(){
@@ -30,7 +30,7 @@ public class Building extends Obstacle{
 	}
 	
 	public void setColliderHouse(){
-		setCollider(new Rectangle(x,y,320,320));
+		setCollider(320,320);
 		tex = new Texture("Map/buildings/House.png");
 	}
 	

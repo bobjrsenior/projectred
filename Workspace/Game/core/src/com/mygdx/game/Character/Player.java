@@ -8,12 +8,12 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 import com.mygdx.game.Inventory;
 import com.mygdx.game.Obstacle;
+import com.mygdx.game.nameDialog;
 import com.mygdx.game.Character.Character;
 import com.mygdx.game.Character.Enemy.Enemy;
 import com.mygdx.game.Character.NPC.NPC;
 
 public class Player extends Character implements InputProcessor{
-	//Debug: Gdx.app.log("Player", "Text");
 	
 	public static Player p;
 	
@@ -21,7 +21,6 @@ public class Player extends Character implements InputProcessor{
 	public Inventory inventory;
 	
 	private boolean[] walking = {false,false,false,false};
-	private int walkdir = 0;
 	private float walkdelay = .2f;
 	private float[] walktimer = new float[4];
 	
@@ -48,19 +47,12 @@ public class Player extends Character implements InputProcessor{
 		hunger += quench;
 		if(thirst > 100) thirst = 100;	
 	}
-	/*
-	public Player(float x, float y) {
-		super(new Texture("People/Player.png"));
-		char_index = addCharacter(this);
-		inventory = new Inventory();
-	}
-	*/
-
 	
 	public void hit(int index){
 		if(characters.get(index) instanceof Enemy){
 			health -= 10;
 			Gdx.app.log("Player", " " + health);
+			nameDialog.dialog.getHuman();
 		}
 		else if(characters.get(index) instanceof NPC){
 			((NPC) characters.get(index)).talk();

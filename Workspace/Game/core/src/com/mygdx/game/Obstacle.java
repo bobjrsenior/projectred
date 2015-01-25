@@ -73,14 +73,7 @@ public class Obstacle {
 	}
 	
 	public void setCollider(Shape2D shape){
-		try{
-			if(((Circle) shape).radius != 0){
-				collider.setCircle(shape);
-			}
-		}
-		catch (java.lang.ClassCastException e){
-			collider.setRectangle(shape);
-		}
+		collider.setRectangle(shape);
 		has_collider = true;
 	}
 	

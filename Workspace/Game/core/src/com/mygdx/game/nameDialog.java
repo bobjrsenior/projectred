@@ -108,14 +108,4 @@ public class nameDialog {
 		font = new BitmapFont();
         font.setColor(Color.GREEN);
 	}
-	
-	
-	public void render(SpriteBatch batch)
-	{
-		//batch.begin();
-		//sprite.draw(batch);
-		//font.draw(batch, text, x, y);
-		//batch.end();
-	}
-
 }

@@ -7,7 +7,6 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Shape2D;
 
 public class Collisions {
-	//Debug: Gdx.app.log("Collisions", "Text");	
 	
 	private Shape2D collider;
 	//true = rectangle false = circle
@@ -15,6 +14,10 @@ public class Collisions {
 
 	public Collisions() {
 		
+	}
+	
+	public Shape2D getCollider(){
+		return collider;
 	}
 	
 	public void setRectangle(float x, float y, float width, float height){
@@ -93,10 +96,6 @@ public class Collisions {
 		}
 		return false;
 		*/
-	}
-
-	public Shape2D getCollider() {
-		return collider;
 	}
 	
 }
