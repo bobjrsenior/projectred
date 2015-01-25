@@ -26,7 +26,7 @@ public class NPC extends Character{
 	Random rand = new Random(System.nanoTime());
 	
 	
-	public NPC(float x, float y) {
+	public NPC(float x, float y, Texture tex) {
 		super(x,y);
 
 		char_index = addCharacter(this);

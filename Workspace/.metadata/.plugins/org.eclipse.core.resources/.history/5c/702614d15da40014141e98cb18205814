@@ -6,9 +6,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 
-public class NPC extends Character{
-	//Debug: Gdx.app.log("NPC", "Text");
-	
+public class Enemy extends Character{
+	//Debug: Gdx.app.log("Enemy", "Text");
+
 	public boolean following;
 	public Character follow;
 	//In steps per second
@@ -16,32 +16,30 @@ public class NPC extends Character{
 	private float followtimer = 0;
 	private float sightdistance = 250;
 	
-	public boolean wandering;
+	public boolean wandering = true;
 	public float wanderspeed = 2;
 	public float wandertimer = 0;
 	private Vector2 dest;
 	private int stuckcount = 0;
-
 	
 	Random rand = new Random(System.nanoTime());
 	
-	
-	public NPC(float x, float y) {
-		super(x,y);
-
+	public Enemy(float x, float y, Texture tex){
+		super(x,y,tex);
 		char_index = addCharacter(this);
 		startWander();
 	}
 	
-	public void startFollow(Player leader){
-
+	public Enemy(float x, float y){
+		super(x,y,new Texture("People/zombie.png"));
+		char_index = addCharacter(this);
 		startWander();
 	}
 	
 	@Override
 	public void update(){
 		super.update();
-		if(following && Math.abs(distance(x,y, follow.x, follow.y)) < sightdistance){
+		if(following && Math.abs(distance()) < sightdistance){
 			followtimer += Gdx.graphics.getDeltaTime();
 			if(followtimer >= (1.0 / followspeed)){
 				followtimer = 0;
@@ -57,17 +55,23 @@ public class NPC extends Character{
 		}
 	}
 	
-	public void talk(){
-		
-	}
-	
 	public void hit(int index){
 		if(characters.get(index) instanceof Player){
-			Gdx.app.log("NPC", "hit player");
+			((Player) characters.get(index)).health -= 10;
+			Gdx.app.log("Player(e)", " " + characters.get(index).health);
 		}
 		else if(characters.get(index) instanceof Enemy){
-			health -= 10;
+			//
 		}
+	}
+	
+	public void hitOb(int index){
+
+	}
+	
+	public float distance(){
+		Vector2 otherpos = follow.getPosition();
+		return otherpos.dst(x, y);
 	}
 	
 	//Wander Stuff
@@ -76,6 +80,7 @@ public class NPC extends Character{
 		dest = new Vector2(rand.nextInt(600) - 300, rand.nextInt(600) - 300);
 		dest = dest.add(x, y);
 		wandering = true;
+		wandering = true;
 	}
 	
 	public void stopWander(){
@@ -83,6 +88,7 @@ public class NPC extends Character{
 	}
 	
 	public void wanderStep(){
+		boolean hitting = false;
 		int xdif = (int) (dest.x - x);
 		int ydif = (int) (dest.y - y);
 		if(Math.abs(xdif) + Math.abs(ydif) <=  tilesize){
@@ -96,8 +102,19 @@ public class NPC extends Character{
 		    		translate(-tilesize * Math.signum(xdif), 0);
 		    		stuckcount ++;
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(xdif), 0);
+    		    		stuckcount ++;
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
 		}
 		else{
@@ -107,24 +124,34 @@ public class NPC extends Character{
 		    		translate(-tilesize * Math.signum(ydif), 0);
 		    		stuckcount ++;
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(ydif), 0);
+    		    		stuckcount ++;
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
 		}
 		if(stuckcount >= 3){
 			startWander();
 		}
+		
 	}
-	
 	
 	//Following stuff
 	public void startFollow(){
 		if(follow == null){
-			Gdx.app.log("NPC", "Noone to follow");
+			Gdx.app.log("Enemy", "Noone to follow");
 		}
 		else{
 			following = true;
-			stopWander();
 		}
 	}
 	
@@ -134,21 +161,34 @@ public class NPC extends Character{
 	}
 	
 	public void stopFollow(){
+		startWander();
 		following = false;
 		followtimer = 0;
-		startWander();
 	}
 	
 	public void followStep(){
+		boolean hitting = false;
 		int xdif = (int) (follow.x - x);
 		int ydif = (int) (follow.y - y);
 		if(Math.abs(xdif) > Math.abs(ydif)){
 			translate(tilesize * Math.signum(xdif), 0);
         	for(int e = 0; e < characters.size(); e ++){
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+
 		    		translate(-tilesize * Math.signum(xdif), 0);
+		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
+        	}
+        	if(!hitting){
+            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+    		    		translate(-tilesize * Math.signum(xdif), 0);
+    		    		hitOb(e);
+    		    		break;
+    		    	}
+            	}
         	}
 		}
 		else{
@@ -157,11 +197,18 @@ public class NPC extends Character{
 		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
 		    		translate(-tilesize * Math.signum(ydif), 0);
 		    		hit(e);
+		    		hitting = true;
 		    		break;
 		    	}
         	}
-		}
-
+        	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+		    		translate(-tilesize * Math.signum(ydif), 0);
+		    		hitOb(e);
+		    		break;
+		    	}
+        	}
+    	}
 	}
-
+	
 }

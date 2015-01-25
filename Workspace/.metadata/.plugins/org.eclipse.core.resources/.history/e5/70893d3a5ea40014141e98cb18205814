@@ -11,35 +11,45 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Array;
 
-public class Indoors extends ApplicationAdapter implements InputProcessor, Screen {
+public class BasicMap extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;
     Texture person;
     SpriteBatch batch;
     Sprite sprite;
+    Renderer renderer;
     
     TiledMap tiledMap;
     OrthographicCamera camera;
     TiledMapRenderer tiledMapRenderer;
     
-    Vector3 initialcampos;
-    Vector3 camoffset;
+    Array<Building> buildings = new Array<Building>();
+    
+    static Vector3 initialcampos;
+    static Vector3 camoffset;
     
     Player player;
-    //NPC test_player2;
-    //Human npc;
+    NPC test_player2;
+    Human npc;
     
     //Player test_player;
-    //Enemy test_npc;
+    Enemy test_npc;
     
     SceneManager game;
     
-    public Indoors(SceneManager g){
+    public BasicMap(SceneManager g){
     	game = g;
     	
     }
@@ -50,20 +60,35 @@ public class Indoors extends ApplicationAdapter implements InputProcessor, Scree
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
         batch = new SpriteBatch();
+        renderer = new Renderer();
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false,w,h);
         camera.update();
         
-        player = new Player(-100, -100);
+        player = new Player(5312, 4672,new Texture("People/player.png"));
         player.setCollider(15f, 15f);
         
+        test_player2 = new NPC(75, 150,new Texture("People/person.png"));
+        test_player2.setCollider(15f, 15f);
+        
+        //test_player2.startFollow(player);
+        
+        npc = new Human(300, 50,new Texture("People/person.png"));
+        npc.setCollider(15f, 15f);
+
+        //test_player = new Player(75, 50,new Texture("person.png"));
+        //test_player.setCollider(15f, 15f);
+        test_npc = new Enemy(75, 350,new Texture("People/alienFriend.png"));
+        test_npc.setCollider(15f, 15f);
+        test_npc.startFollow(player);
 
         person = new Texture("person.png");
         //sprite = new Sprite(person);
         //sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
-        tiledMap = new TmxMapLoader().load("Map/indoorsMap.tmx");
+        tiledMap = new TmxMapLoader().load("Map/map2.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+        tileTest();
         Gdx.input.setInputProcessor(this);
         
     	InputProcessor inputProcessorOne = player;
@@ -85,6 +110,11 @@ public class Indoors extends ApplicationAdapter implements InputProcessor, Scree
     @Override
     public void render () {
     	//Call various classes update methods
+    	/*
+    	test_player2.update();
+    	npc.update();
+    	test_npc.update();
+    	*/
     	
     	//Make the camera centered around the player
     	Vector3 translation = new Vector3(player.x - camera.position.x,player.y - camera.position.y,0);
@@ -99,11 +129,45 @@ public class Indoors extends ApplicationAdapter implements InputProcessor, Scree
         tiledMapRenderer.setView(camera);
         tiledMapRenderer.render();
         
+        renderer.Render();
+        /*
         batch.begin();
         batch.draw(player.tex, player.x + camoffset.x, player.y + camoffset.y);
         //lower left person
-        
+        batch.draw(test_player2.tex, test_player2.x + camoffset.x, test_player2.y + camoffset.y);
+        batch.draw(npc.tex, npc.x + camoffset.x, npc.y + camoffset.y);
+
+        //batch.draw(test_player.tex, test_player.x, test_player.y);
+        batch.draw(test_npc.tex, test_npc.x + camoffset.x, test_npc.y + camoffset.y);
         batch.end();
+        */
+        /*
+        for(Building b : buildings){
+        	batch.begin();
+        	batch.draw(b.tex, b.x + camoffset.x, b.y + camoffset.y);
+            batch.end();
+        }
+		*/
+        
+        
+    }
+    
+    public void tileTest(){
+    	System.out.println(tiledMap.getLayers().get("Object Layer 1").getObjects().getCount());
+    	System.out.println("Visible: " + tiledMap.getLayers().get("Object Layer 1").isVisible());
+    	
+    	MapObjects test = tiledMap.getLayers().get("Object Layer 1").getObjects();
+    	
+		for(MapObject tile : test){
+			System.out.println(tile.getName());
+			if (tile instanceof RectangleMapObject) {
+				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
+				System.out.println(rec.getX() + " : " + rec.getY());
+				Building temp = new Building(rec.x, rec.y, new Texture("Map/objects/gravestone.png"));
+				temp.setColliderTile();
+				buildings.add(temp);
+			}
+		}		
     }
 
     @Override

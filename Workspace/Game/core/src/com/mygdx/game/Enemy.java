@@ -24,18 +24,19 @@ public class Enemy extends Character{
 	
 	Random rand = new Random(System.nanoTime());
 	
-	public Enemy(float x, float y, Texture tex){
-		super(x,y,tex);
+	public Enemy(float x, float y){
+		super(x,y);
+		tex = new Texture("People/zombie.png");
 		char_index = addCharacter(this);
 		startWander();
 	}
-	
+	/*
 	public Enemy(float x, float y){
 		super(x,y,new Texture("People/zombie.png"));
 		char_index = addCharacter(this);
 		startWander();
 	}
-	
+	*/
 	@Override
 	public void update(){
 		super.update();

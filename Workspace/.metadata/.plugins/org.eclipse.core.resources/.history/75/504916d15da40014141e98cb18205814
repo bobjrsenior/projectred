@@ -26,8 +26,8 @@ public class NPC extends Character{
 	Random rand = new Random(System.nanoTime());
 	
 	
-	public NPC(float x, float y) {
-		super(x,y);
+	public NPC(float x, float y, Texture tex) {
+		super(x,y,tex);
 
 		char_index = addCharacter(this);
 		startWander();

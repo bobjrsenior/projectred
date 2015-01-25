@@ -17,7 +17,6 @@ public class Player extends Character implements InputProcessor{
 	
 	public Player(float x, float y) {
 		super(x, y);
-		tex = new Texture("People/Player.png");
 		char_index = addCharacter(this);
 		inventory = new Inventory();
 		hunger = 100;
@@ -33,13 +32,13 @@ public class Player extends Character implements InputProcessor{
 		hunger += quench;
 		if(thirst > 100) thirst = 100;	
 	}
-	/*
+	
 	public Player(float x, float y) {
 		super(new Texture("People/Player.png"));
 		char_index = addCharacter(this);
 		inventory = new Inventory();
 	}
-	*/
+	
 	@Override
 	public boolean keyUp(int keycode){
 
