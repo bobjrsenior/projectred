@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="12">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="13">
  <tileset firstgid="1" name="EW Road" tilewidth="32" tileheight="32">
   <image source="road/EW.png" width="128" height="128"/>
  </tileset>
@@ -3270,5 +3270,6 @@
  <objectgroup name="Object Layer 1">
   <object id="9" name="Test Gravestone" gid="1185" x="5312" y="16640"/>
   <object id="11" gid="1181" x="5248" y="16640"/>
+  <object id="12" name="Invidible Wall" x="4576" y="16352" width="576" height="512"/>
  </objectgroup>
 </map>
