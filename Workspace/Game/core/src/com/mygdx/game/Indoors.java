@@ -16,6 +16,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector3;
+import com.mygdx.game.Character.Player;
 
 public class Indoors extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;

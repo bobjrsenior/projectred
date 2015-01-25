@@ -2,8 +2,11 @@ package com.mygdx.game;
 
 import java.util.ArrayList;
 
+import com.mygdx.game.Character.Character;
+import com.mygdx.game.Character.Player;
 import com.mygdx.game.Items.Food;
 import com.mygdx.game.Items.Item;
+
 
 public class Inventory {
 	

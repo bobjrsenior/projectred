@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Items.Item;
+import com.mygdx.game.Character.Character;
+
 
 public class Renderer {
 	ArrayList<Item> itemRenders;

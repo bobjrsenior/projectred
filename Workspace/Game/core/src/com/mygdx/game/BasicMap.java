@@ -23,6 +23,10 @@ import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.Character.Player;
+import com.mygdx.game.Character.Enemy.Enemy;
+import com.mygdx.game.Character.NPC.Human;
+import com.mygdx.game.Character.NPC.NPC;
 
 public class BasicMap extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;
@@ -41,7 +45,8 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     static Vector3 camoffset;
     
     Player player;
-    NPC test_player2;
+    
+    //NPC test_player2;
     Human npc;
     
     //Player test_player;
@@ -71,8 +76,6 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         
         //test_player2.startFollow(player);
         
-        npc = new Human(300, 50);
-        npc.setCollider(15f, 15f);
 
         //test_player = new Player(75, 50,new Texture("person.png"));
         //test_player.setCollider(15f, 15f);

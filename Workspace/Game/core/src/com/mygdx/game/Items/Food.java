@@ -1,6 +1,6 @@
 package com.mygdx.game.Items;
 
-import com.mygdx.game.Player;
+import com.mygdx.game.Character.Player;
 
 public class Food extends Item{
 	public int nutrition;
