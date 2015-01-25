@@ -1,0 +1,13 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Game;
+
+public class SceneManager extends Game{
+	private Game game;
+
+	public SceneManager() {
+		game = this;
+		setScreen(new TitleScreen(game));
+	}
+
+}

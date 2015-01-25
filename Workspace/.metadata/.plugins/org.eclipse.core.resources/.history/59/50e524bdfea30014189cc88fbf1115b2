@@ -1,0 +1,9 @@
+package com.mygdx.game;
+
+public class Building {
+
+	public Building() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

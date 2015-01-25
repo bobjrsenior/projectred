@@ -1,0 +1,147 @@
+package com.mygdx.game;
+
+//import java.util.*;
+
+//import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+
+public class TitleScreen implements InputProcessor, Screen{
+	Texture title;
+	Texture newGame;
+	Texture close;
+	Texture selectTex;
+	Sprite select;
+	SpriteBatch batch;
+	
+	SceneManager game;
+	
+	public TitleScreen(SceneManager g){
+		game = g;
+		create();
+	}
+	
+	public void create() {
+		//float h = Gdx.graphics.getHeight();
+		//float w = Gdx.graphics.getWidth();
+		batch = new SpriteBatch();
+		
+		title = new Texture("title/menu.png");
+		newGame = new Texture("title/New Game.png");
+		close = new Texture("title/Close.png");
+		selectTex = new Texture("title/select.png");
+		select = new Sprite(selectTex);
+		select.setPosition(0, -33);
+		Gdx.input.setInputProcessor(this);
+	}
+	
+	public void dispose() {
+		batch.dispose();
+		selectTex.dispose();
+	}
+	
+	public void render(){
+		Gdx.gl.glClearColor(1, 0, 0, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		batch.begin();
+		batch.draw(title, 0, 0);
+		batch.draw(newGame, 96, 64);
+		batch.draw(close, 96, 32);
+		select.draw(batch);
+		batch.end();
+	}
+	
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		if(screenX < 256 && screenX > 96 && screenY < 416 && screenY >384); //New Game button
+			//game.setScreen(game.basicMapScreen);
+		if(screenX < 256 && screenX > 96 && screenY < 448 && screenY >416)  //Close button
+			Gdx.app.exit();
+			//dispose();
+        return true;
+    }
+	 @Override
+	    public boolean keyDown(int keycode) {
+	        return false;
+	    }
+
+	    @Override
+	    public boolean keyUp(int keycode) {
+	        return false;
+	    }
+
+	    @Override
+	    public boolean keyTyped(char character) {
+
+	        return false;
+	    }
+
+	    @Override
+	    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+	        return false;
+	    }
+
+	    @Override
+	    public boolean touchDragged(int screenX, int screenY, int pointer) {
+	        return false;
+	    }
+
+	    @Override
+	    public boolean mouseMoved(int screenX, int screenY) {
+	    	if(screenX < 256 && screenX > 96 && screenY < 416 && screenY >384) //New Game button
+	    		select.setPosition(96,64);
+	    	else if(screenX < 256 && screenX > 96 && screenY < 448 && screenY >416)  //Close button
+				select.setPosition(96,32);
+			else
+				select.setPosition(0,-100);
+	        return false;
+	    }
+
+	    @Override
+	    public boolean scrolled(int amount) {
+	        return false;
+	    }
+
+		@Override
+		public void show() {
+			
+		}
+
+		@Override
+		public void render(float delta) {
+			render();			
+		}
+
+		@Override
+		public void hide() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void resize(int width, int height) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void pause() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void resume() {
+			// TODO Auto-generated method stub
+			
+		}
+	}

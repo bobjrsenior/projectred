@@ -1,0 +1,39 @@
+package com.mygdx.game;
+
+import java.util.ArrayList;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+
+public class Obstacle {
+
+	public static ArrayList<Character> obstacles = new ArrayList<Character>();
+	public int char_index;
+	
+	public int tilesize = 32;
+	
+	public int health = 100;
+	public float x,y;
+	
+	public Texture tex;
+	
+	private Collisions collider;
+	public boolean has_collider = false;
+	
+	public Obstacle(float x, float y, Texture tex) {
+		this.x = x;
+		this.y = y;
+		this.tex = tex;
+		
+		collider = new Collisions();
+	}
+
+	public Obstacle(Texture tex) {
+		Gdx.app.log("Character","Pos not set");
+		this.x = 0;
+		this.y = 0;
+		this.tex = tex;
+		
+		collider = new Collisions();
+	}
+}

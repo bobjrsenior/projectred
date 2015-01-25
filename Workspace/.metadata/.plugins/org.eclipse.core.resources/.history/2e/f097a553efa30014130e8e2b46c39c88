@@ -1,0 +1,39 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Vector2;
+
+public class Enemy extends Character{
+	//Debug: Gdx.app.log("Enemy", "Text");
+	
+	
+	public boolean following;
+	public Character follow;
+	//In steps per second
+	public float followspeed = 3;
+	private float followtimer = 0;
+	private float sightdistance = 30;
+	
+	public Enemy(float x, float y, Texture tex){
+		super(x,y,tex);
+		char_index = addCharacter(this);
+	}
+	
+	@Override
+	public void update(){
+		super.update();
+	}
+	
+	@Override
+	public void hit(int index){
+		if(characters.get(index) instanceof Player){
+			((Player) characters.get(index)).health -= 10;
+			Gdx.app.log("Player(e)", " " + health);
+		}
+		else if(characters.get(index) instanceof Enemy){
+			//
+		}
+	}
+	
+}

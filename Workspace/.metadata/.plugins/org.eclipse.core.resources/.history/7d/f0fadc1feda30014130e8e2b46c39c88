@@ -1,0 +1,17 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.graphics.Texture;
+
+public class Human extends NPC{
+
+	Dialog dialog = new Dialog("Human");
+	
+	public Human(float x, float y, Texture tex) {
+		super(x, y, tex);
+		char_index = addCharacter(this);
+	}
+	
+	public String getDialog(){
+		return dialog.getHuman();
+	}
+}

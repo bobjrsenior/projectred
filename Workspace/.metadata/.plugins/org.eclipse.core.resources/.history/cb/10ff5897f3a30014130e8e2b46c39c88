@@ -1,0 +1,87 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Vector2;
+
+public class NPC extends Character{
+	//Debug: Gdx.app.log("NPC", "Text");
+	
+	public boolean following;
+	public Character follow;
+	//In steps per second
+	public float followspeed = 2;
+	private float followtimer = 0;
+	private float sightdistance = 250;
+	
+	public NPC(float x, float y, Texture tex) {
+		super(x,y,tex);
+	}
+	
+	@Override
+	public void update(){
+		super.update();
+		if(following && Math.abs(distance(x,y, follow.x, follow.y)) < sightdistance){
+			followtimer += Gdx.graphics.getDeltaTime();
+			if(followtimer >= (1.0 / followspeed)){
+				followtimer = 0;
+				followStep();
+			}
+		}
+	}
+	
+	public void hit(int index){
+		if(characters.get(index) instanceof Player){
+			Gdx.app.log("NPC", "hit player");
+		}
+		else if(characters.get(index) instanceof Enemy){
+			health -= 10;
+		}
+	}
+	
+	
+	//Following stuff
+	public void startFollow(){
+		if(follow == null){
+			Gdx.app.log("NPC", "Noone to follow");
+		}
+		else{
+			following = true;
+		}
+	}
+	
+	public void startFollow(Character c){
+		following = true;
+		follow = c;
+	}
+	
+	public void stopFollow(){
+		following = false;
+		followtimer = 0;
+	}
+	
+	public void followStep(){
+		int xdif = (int) (follow.x - x);
+		int ydif = (int) (follow.y - y);
+		if(Math.abs(xdif) > Math.abs(ydif)){
+			translate(32 * Math.signum(xdif), 0);
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(-32 * Math.signum(xdif), 0);
+		    		break;
+		    	}
+        	}
+		}
+		else{
+			translate(0, 32 * Math.signum(ydif));
+        	for(int e = 0; e < characters.size(); e ++){
+		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+		    		translate(-32 * Math.signum(ydif), 0);
+		    		hit(e);
+		    		break;
+		    	}
+        	}
+		}
+	}
+
+}

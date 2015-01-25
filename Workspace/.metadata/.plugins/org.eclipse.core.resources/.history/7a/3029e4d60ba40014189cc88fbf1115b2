@@ -1,0 +1,178 @@
+package com.mygdx.game;
+
+import java.util.ArrayList;
+
+public class AStar {
+
+	public AStar() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Node Solve(int x1, int y1, int x2, int y2, int type){
+		Node start = new Node(x1,y1,0);
+		Node end = new Node(x1,y1,0);
+		
+		boolean keepsearching = true;
+		
+		//create open and closed arrays to hold visisted and unvisited nodes
+		ArrayList<Node> openList = new ArrayList<Node>();
+		ArrayList<Node> closedList = new ArrayList<Node>();
+		ArrayList<Node> neighbors = new ArrayList<Node>();
+		
+		//misc variables to keep track of metrics
+		int nodesCreated = 0;
+		int nodesExpanded = 0;
+		
+		openList.add(start);
+		
+		while(keepsearching){
+            
+        	//pop node n from openList
+        	Node n = openList.remove(0);
+        	System.out.println("Poping " + n.toString());
+        
+        	//check for goal state
+        	if(n.equals(end)){
+        		System.out.println("Found it!");
+        		keepsearching = false;
+        		while(!n.equals(start)){
+        			System.out.print(n.getParent().toString());
+        			n = n.getParent();
+        		}
+        	}else{
+        		//find all possible neighbors
+        		int r = n.getRow();
+        		int c = n.getCol();
+        		
+       		for(int i = r - Character.tilesize; i <= r + Character.tilesize; i += Character.tilesize){
+        			for(int j = c - Character.tilesize; j <= c + Character.tilesize; j += Character.tilesize){
+
+    					Node m = new Node(i, j, 0);
+    					System.out.println("Generating neighbor: " + m.toString());
+    					m.setParent(n);
+    					int newG = 32;
+    					if(Math.abs(i - r) + Math.abs(j - c) == 2){
+    						newG = 320;
+    					}
+    					m.setG(n.getG() + newG);
+    					m.setH(getH(m, end));
+    					m.setF();
+    					
+    					if(inList(m, closedList) == null){
+    						Node q = inList(m, openList);
+    						if(q == null){
+    							openList.add(m);
+    							System.out.println("Adding Node: " + m.toString());
+    						}else{
+    							if(m.getG() < q.getG()){
+    								q.setG(m.getG());
+    								q.setParent(n);
+    							}
+    						}
+    					}
+        			}
+        		}
+        		sortList(openList);
+        		closedList.add(n);
+        	}		     
+		}
+		return end;
+	}
+   
+	public static void sortList(ArrayList<Node> list){
+		int lowestValPos;
+		Node tempValHolder;
+		for(int arrayPos = 0; arrayPos < list.size(); arrayPos++){
+			lowestValPos = arrayPos;
+			for(int index = arrayPos; index < (list.size() - 1); index++){
+				if(list.get(index + 1).getF() < list.get(lowestValPos).getF()){
+					lowestValPos = index + 1;
+				}
+			}
+			tempValHolder = list.get(arrayPos);
+			list.set(arrayPos, list.get(lowestValPos));
+			list.set(lowestValPos, tempValHolder);
+		}
+	}
+   
+	public static int getH(Node s, Node g){
+		int rowDif = (int) Math.abs(s.getRow() - g.getRow()) * 10;
+		int colDif = (int) Math.abs(s.getCol() - g.getCol()) * 10;
+		
+		return (rowDif + colDif);
+	}
+	public static Node inList(Node n, ArrayList<Node> list){
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).equals(n)){
+				return list.get(i);
+			}
+		}
+		return null;
+	} 
+	
+	class Node{
+		
+		int x,y,f,g,h,type,index;		
+		
+		Node parent;
+		
+		public Node(int x, int y, int type){
+			this.x = x;
+			this.y = y;
+			this.type = type;
+		}
+		
+		public void setParent(Node p){
+			parent = p;
+		}
+		
+		public Node getParent(){
+			return parent;
+		}
+		
+		public int getRow(){
+			return y;
+		}
+		
+		public int getCol(){
+			return x;
+		}
+
+		public int getF() {
+			return f;
+		}
+
+		public void setF() {
+			this.f = g + h;
+		}
+
+		public int getG() {
+			return g;
+		}
+
+		public void setG(int g) {
+			this.g = g;
+		}
+
+		public int getH() {
+			return h;
+		}
+
+		public void setH(int h) {
+			this.h = h;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			Node temp = (Node) obj;
+			if(temp.x == x && temp.y == y){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		
+		
+	}
+}
