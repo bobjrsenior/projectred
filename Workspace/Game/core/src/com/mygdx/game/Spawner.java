@@ -11,8 +11,18 @@ import com.mygdx.game.Character.Enemy.Zombie;
 public class Spawner {
 	
 	public Spawner(){
+		System.out.println(BasicMap.tiledMap.getLayers().getCount());
 		MapObjects test = BasicMap.tiledMap.getLayers().get("Character Layer").getObjects();
-		System.out.println(BasicMap.tiledMap.getLayers().get("Character Layer").getObjects().getCount());
+		for(MapObject tile : test){
+			if (tile instanceof RectangleMapObject) {
+				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
+				System.out.println(tile.getName());
+				Spawn(tile.getName(), rec.x , rec.y);
+			}
+		}
+		
+		test = BasicMap.tiledMap.getLayers().get("Buildings Layer").getObjects();
+		System.out.println(test.getCount());
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
@@ -28,6 +38,7 @@ public class Spawner {
 		switch(object){
 		case "Player":	new Player(PosX,PosY); System.out.println("You did it hurray"); break;
 		case "Zombie":	new Zombie(PosX,PosY); break;
+		case "House": Building temp = new Building(PosX,PosY); temp.setColliderHouse();break;
 		default: System.out.println("Didn't work");
 		}
 	}

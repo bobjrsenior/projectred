@@ -25,6 +25,7 @@ public class Building extends Obstacle{
 	
 	public void setColliderHouse(){
 		setCollider(new Rectangle(x,y,320,320));
+		tex = new Texture("Map/buildings/House.png");
 	}
 	
 	public void setColliderFactory(){
