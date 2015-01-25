@@ -248,6 +248,11 @@
  </tileset>
  <tileset firstgid="1185" name="Gravestone" tilewidth="32" tileheight="32">
   <image source="objects/gravestone.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="Gravestone" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="1186" name="Church" tilewidth="32" tileheight="32">
   <image source="buildings/church.png" width="960" height="640"/>
