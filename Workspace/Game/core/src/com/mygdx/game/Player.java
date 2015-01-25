@@ -23,6 +23,26 @@ public class Player extends Character implements InputProcessor{
 	
 	@Override
 	public boolean keyUp(int keycode){
+
+        return false;
+	}
+	
+	public void hit(int index){
+		if(characters.get(index) instanceof Enemy){
+			health -= 10;
+			Gdx.app.log("Player", " " + health);
+		}
+		else if(characters.get(index) instanceof NPC){
+			((NPC) characters.get(index)).talk();
+		}
+	}
+	
+	public void hitOb(int index){
+		
+	}
+
+	@Override
+	public boolean keyDown(int keycode) {
 		boolean hitting = false;
         if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
         	translate(-tilesize,0);
@@ -101,26 +121,7 @@ public class Player extends Character implements InputProcessor{
             	}
         	}
         }
-        return false;
-	}
-	
-	public void hit(int index){
-		if(characters.get(index) instanceof Enemy){
-			health -= 10;
-			Gdx.app.log("Player", " " + health);
-		}
-		else if(characters.get(index) instanceof NPC){
-			((NPC) characters.get(index)).talk();
-		}
-	}
-	
-	public void hitOb(int index){
-		
-	}
-
-	@Override
-	public boolean keyDown(int keycode) {
-		// TODO Auto-generated method stub
+        System.out.println(x + " : " + y);
 		return false;
 	}
 

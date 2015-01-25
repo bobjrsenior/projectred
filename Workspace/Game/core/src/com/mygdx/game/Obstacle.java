@@ -29,6 +29,13 @@ public class Obstacle {
 		
 		collider = new Collisions();
 	}
+	
+	public Obstacle(float x, float y) {
+		this.x = x;
+		this.y = y;
+		
+		collider = new Collisions();
+	}
 
 	public Obstacle(Texture tex) {
 		Gdx.app.log("Obstacle","Pos not set");

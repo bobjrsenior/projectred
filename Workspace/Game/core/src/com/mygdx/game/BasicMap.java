@@ -11,11 +11,18 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Array;
 
 public class BasicMap extends ApplicationAdapter implements InputProcessor, Screen {
     Texture img;
@@ -26,6 +33,8 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     TiledMap tiledMap;
     OrthographicCamera camera;
     TiledMapRenderer tiledMapRenderer;
+    
+    Array<Building> buildings = new Array<Building>();
     
     Vector3 initialcampos;
     Vector3 camoffset;
@@ -55,7 +64,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         camera.setToOrtho(false,w,h);
         camera.update();
         
-        player = new Player(75, 50,new Texture("player.png"));
+        player = new Player(5312, 4672,new Texture("player.png"));
         player.setCollider(15f, 15f);
         
         test_player2 = new NPC(75, 150,new Texture("person.png"));
@@ -77,6 +86,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         //sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
         tiledMap = new TmxMapLoader().load("Map/map2.tmx");
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+        tileTest();
         Gdx.input.setInputProcessor(this);
         
     	InputProcessor inputProcessorOne = player;
@@ -123,8 +133,33 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
 
         //batch.draw(test_player.tex, test_player.x, test_player.y);
         batch.draw(test_npc.tex, test_npc.x + camoffset.x, test_npc.y + camoffset.y);
-        
         batch.end();
+        
+        for(Building b : buildings){
+        	batch.begin();
+        	batch.draw(b.tex, b.x + camoffset.x, b.y + camoffset.y);
+            batch.end();
+
+        }
+        
+    }
+    
+    public void tileTest(){
+    	System.out.println(tiledMap.getLayers().get("Object Layer 1").getObjects().getCount());
+    	System.out.println("Visible: " + tiledMap.getLayers().get("Object Layer 1").isVisible());
+    	
+    	MapObjects test = tiledMap.getLayers().get("Object Layer 1").getObjects();
+    	
+		for(MapObject tile : test){
+			System.out.println(tile.getName());
+			if (tile instanceof RectangleMapObject) {
+				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
+				System.out.println(rec.getX() + " : " + rec.getY());
+				Building temp = new Building(rec.x, rec.y, new Texture("Map/objects/gravestone.png"));
+				temp.setColliderTile();
+				buildings.add(temp);
+			}
+		}		
     }
 
     @Override

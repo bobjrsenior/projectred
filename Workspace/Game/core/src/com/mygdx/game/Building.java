@@ -13,6 +13,12 @@ public class Building extends Obstacle{
 		obs_index = addObstacle(this);
 	}
 	
+	public Building(float x, float y) {
+		super(x, y);
+		
+		obs_index = addObstacle(this);
+	}
+	
 	public void setColliderBuilding(){
 		setCollider(new Rectangle(x,y,320,320));
 	}
@@ -35,6 +41,14 @@ public class Building extends Obstacle{
 	
 	public void setColliderStore(){
 		setCollider(new Rectangle(x,y,640,320));
+	}
+	
+	public void setColliderTile(){
+		setCollider(new Rectangle(x,y,32,32));
+	}
+	
+	public void setColliderFence(){
+		setCollider(new Rectangle(x,y,64,64));
 	}
 
 }
