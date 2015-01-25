@@ -18,12 +18,11 @@ public class Spawner {
 	ItemRandomizer randy;
 	public Spawner(){
 		randy = new ItemRandomizer();
-		System.out.println(BasicMap.tiledMap.getLayers().getCount());
+		//System.out.println(BasicMap.tiledMap.getLayers().getCount());
 		MapObjects test = BasicMap.tiledMap.getLayers().get("Character Layer").getObjects();
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
-				System.out.println(tile.getName());
 				Spawn(tile.getName(), rec.x , rec.y);
 			}
 		}
@@ -33,7 +32,6 @@ public class Spawner {
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
-				System.out.println(tile.getName());
 				Spawn(tile.getName(), rec.x , rec.y);
 			}
 		}
@@ -42,7 +40,6 @@ public class Spawner {
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
-				System.out.println(tile.getName());
 				Spawn(tile.getName(), rec.x , rec.y);
 			}
 		}
@@ -51,7 +48,6 @@ public class Spawner {
 		for(MapObject tile : test){
 			if (tile instanceof RectangleMapObject) {
 				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
-				System.out.println(tile.getName());
 				Spawn(tile.getName(), rec.x , rec.y, rec.width, rec.height);
 			}
 		}
@@ -62,7 +58,7 @@ public class Spawner {
 	public void Spawn(String object, float PosX, float PosY){
 		Building temp;
 		switch(object){
-		case "Player":	new Player(PosX,PosY); System.out.println("You did it hurray"); break;
+		case "Player":	new Player(PosX,PosY); break;
 		case "Zombie":	new Zombie(PosX,PosY); break;
 		case "Cow":	new Cow(PosX,PosY); break;
 		case "House": temp = new Building(PosX,PosY); temp.setColliderHouse();break;
