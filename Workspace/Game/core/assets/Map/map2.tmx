@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="888" height="667" tilewidth="32" tileheight="32" backgroundcolor="#ffffff" nextobjectid="315">
  <tileset firstgid="1" name="EW Road" tilewidth="32" tileheight="32">
   <image source="road/EW.png" width="128" height="128"/>
  </tileset>
@@ -3288,6 +3288,265 @@
   <object id="31" name="Cow" gid="1788" x="5311.33" y="16785.7"/>
  </objectgroup>
  <objectgroup name="Buildings Layer">
-  <object id="29" name="House" gid="1171" x="7109.33" y="13660"/>
+  <object id="125" name="House" gid="1171" x="1824" y="14048"/>
+  <object id="128" name="House" gid="1171" x="2176" y="14015"/>
+  <object id="130" name="House" gid="1171" x="2592" y="14048"/>
+  <object id="131" name="House" gid="1171" x="2912" y="14048"/>
+  <object id="132" name="House" gid="1171" x="3456" y="13920"/>
+  <object id="133" name="House" gid="1171" x="3808" y="13920"/>
+  <object id="134" name="House" gid="1171" x="4128" y="13920"/>
+  <object id="135" name="House" gid="1171" x="4544" y="13792"/>
+  <object id="137" name="House" gid="1171" x="4896" y="13792"/>
+  <object id="138" name="House" gid="1171" x="5248" y="13792"/>
+  <object id="139" name="House" gid="1171" x="5568" y="13632"/>
+  <object id="140" name="House" gid="1171" x="5952" y="13632"/>
+  <object id="141" name="House" gid="1171" x="6400" y="13632"/>
+  <object id="142" name="House" gid="1171" x="6752" y="13632"/>
+  <object id="143" name="House" gid="1171" x="7104" y="13664"/>
+  <object id="144" name="House" gid="1171" x="7616" y="13664"/>
+  <object id="145" name="House" gid="1171" x="8000" y="13664"/>
+  <object id="146" name="House" gid="1171" x="8384" y="13664"/>
+  <object id="147" name="House" gid="1171" x="8384" y="14047.3"/>
+  <object id="148" name="House" gid="1171" x="8736" y="14304"/>
+  <object id="149" name="House" gid="1171" x="9088" y="14303.3"/>
+  <object id="150" name="House" gid="1171" x="9056" y="14688"/>
+  <object id="151" name="House" gid="1171" x="9376" y="14944"/>
+  <object id="153" name="House" gid="1171" x="12160" y="15008"/>
+  <object id="154" name="House" gid="1171" x="14560" y="17248"/>
+  <object id="156" name="House" gid="1171" x="14944" y="17248"/>
+  <object id="157" name="House" gid="1171" x="14624" y="17792"/>
+  <object id="158" name="House" gid="1171" x="15072" y="17760.7"/>
+  <object id="159" name="House" gid="1171" x="15296" y="17248"/>
+  <object id="160" name="House" gid="1171" x="15680" y="17248.7"/>
+  <object id="161" name="House" gid="1171" x="15488" y="17760"/>
+  <object id="162" name="House" gid="1171" x="15616" y="18080"/>
+  <object id="163" name="House" gid="1171" x="15936" y="18048"/>
+  <object id="164" name="House" gid="1171" x="16256" y="18048.7"/>
+  <object id="165" name="House" gid="1171" x="16576.7" y="18048"/>
+  <object id="166" name="House" gid="1171" x="16896" y="18048"/>
+  <object id="167" name="House" gid="1171" x="16000" y="17185.3"/>
+  <object id="168" name="House" gid="1171" x="16416" y="17184"/>
+  <object id="169" name="House" gid="1171" x="16384" y="17536"/>
+  <object id="170" name="House" gid="1171" x="16768.7" y="17535.3"/>
+  <object id="171" name="House" gid="1171" x="17088" y="17535.3"/>
+  <object id="172" name="House" gid="1171" x="17408" y="17632"/>
+  <object id="173" name="House" gid="1171" x="17408.7" y="18176"/>
+  <object id="174" name="House" gid="1171" x="17728" y="18176"/>
+  <object id="175" name="House" gid="1171" x="18049.3" y="18176"/>
+  <object id="176" name="House" gid="1171" x="18304" y="17664"/>
+  <object id="177" name="House" gid="1171" x="18624" y="17663.3"/>
+  <object id="178" name="House" gid="1171" x="18944" y="17824"/>
+  <object id="179" name="House" gid="1171" x="18816" y="18336"/>
+  <object id="180" name="House" gid="1171" x="18784" y="18688"/>
+  <object id="181" name="House" gid="1171" x="19136" y="18688.7"/>
+  <object id="182" name="House" gid="1171" x="19488" y="18528"/>
+  <object id="183" name="House" gid="1171" x="19168" y="18334.7"/>
+  <object id="184" name="House" gid="1171" x="19550.7" y="18207.3"/>
+  <object id="185" name="House" gid="1171" x="19518.7" y="17695.3"/>
+  <object id="186" name="House" gid="1171" x="19967.3" y="17568"/>
+  <object id="187" name="House" gid="1171" x="20032" y="18080"/>
+  <object id="188" name="House" gid="1171" x="20033.3" y="18432"/>
+  <object id="189" name="House" gid="1171" x="20416" y="18465.3"/>
+  <object id="190" name="House" gid="1171" x="20479.3" y="18080.7"/>
+  <object id="191" name="House" gid="1171" x="20288" y="17567.3"/>
+  <object id="192" name="House" gid="1171" x="20608" y="17566.7"/>
+  <object id="193" name="House" gid="1171" x="20959.3" y="17567.3"/>
+  <object id="194" name="House" gid="1171" x="20928" y="18079.3"/>
+  <object id="195" name="House" gid="1171" x="21216" y="18336"/>
+  <object id="196" name="House" gid="1171" x="21600.7" y="17696"/>
+  <object id="197" name="House" gid="1171" x="20960.7" y="17247.3"/>
+  <object id="198" name="House" gid="1171" x="21473.3" y="17055.3"/>
+  <object id="199" name="House" gid="1171" x="21473.3" y="17376"/>
+  <object id="200" name="House" gid="1171" x="21472.7" y="16735.3"/>
+  <object id="201" name="House" gid="1171" x="21472" y="18720"/>
+  <object id="202" name="House" gid="1171" x="22240" y="18846.7"/>
+  <object id="203" name="House" gid="1171" x="22112" y="18528"/>
+  <object id="204" name="House" gid="1171" x="21856" y="18207.3"/>
+  <object id="205" name="House" gid="1171" x="22208" y="18208"/>
+  <object id="206" name="House" gid="1171" x="22528" y="18207.3"/>
+  <object id="207" name="House" gid="1171" x="22848" y="18208"/>
+  <object id="208" name="House" gid="1171" x="23168.7" y="18209.3"/>
+  <object id="209" name="House" gid="1171" x="23487.3" y="18208.7"/>
+  <object id="210" name="House" gid="1171" x="23808" y="18208.7"/>
+  <object id="211" name="House" gid="1171" x="24128" y="18208"/>
+  <object id="212" name="House" gid="1171" x="24448" y="18206"/>
+  <object id="213" name="House" gid="1171" x="21920" y="17693.3"/>
+  <object id="214" name="House" gid="1171" x="22241.3" y="17694.7"/>
+  <object id="215" name="House" gid="1171" x="22560.5" y="17696"/>
+  <object id="216" name="House" gid="1171" x="22882" y="17695.5"/>
+  <object id="217" name="House" gid="1171" x="24191.3" y="17696"/>
+  <object id="218" name="House" gid="1171" x="24512" y="17696"/>
+  <object id="219" name="House" gid="1171" x="24831.3" y="17568"/>
+  <object id="220" name="House" gid="1171" x="24447" y="17249"/>
+  <object id="221" name="House" gid="1171" x="24959.5" y="17184.5"/>
+  <object id="222" name="House" gid="1171" x="24575" y="16864.5"/>
+  <object id="223" name="House" gid="1171" x="24320" y="16544"/>
+  <object id="224" name="House" gid="1171" x="24192" y="16096"/>
+  <object id="225" name="House" gid="1171" x="24065" y="15776"/>
+  <object id="226" name="House" gid="1171" x="23936" y="15455"/>
+  <object id="227" name="House" gid="1171" x="24448" y="15263"/>
+  <object id="228" name="House" gid="1171" x="23808" y="15136"/>
+  <object id="229" name="House" gid="1171" x="23680" y="14816"/>
+  <object id="230" name="House" gid="1171" x="24192" y="14496"/>
+  <object id="231" name="House" gid="1171" x="23552" y="14496.7"/>
+  <object id="232" name="House" gid="1171" x="23424" y="14175.3"/>
+  <object id="233" name="House" gid="1171" x="24192" y="14176"/>
+  <object id="234" name="House" gid="1171" x="23423.3" y="13855.3"/>
+  <object id="235" name="House" gid="1171" x="23937.3" y="13855.3"/>
+  <object id="236" name="House" gid="1171" x="12672" y="13057.3"/>
+  <object id="237" name="House" gid="1171" x="12319.3" y="13247.3"/>
+  <object id="238" name="House" gid="1171" x="12512" y="13600.7"/>
+  <object id="239" name="House" gid="1171" x="12896" y="13440"/>
+  <object id="240" name="House" gid="1171" x="13023.3" y="13056"/>
+  <object id="241" name="House" gid="1171" x="13375.3" y="13056.7"/>
+  <object id="242" name="House" gid="1171" x="13696" y="13056.7"/>
+  <object id="243" name="House" gid="1171" x="13310.7" y="13664"/>
+  <object id="244" name="House" gid="1171" x="13696" y="13375.3"/>
+  <object id="245" name="House" gid="1171" x="14016.7" y="13598.7"/>
+  <object id="246" name="House" gid="1171" x="14336.7" y="13602"/>
+  <object id="247" name="House" gid="1171" x="14656" y="13601.3"/>
+  <object id="248" name="House" gid="1171" x="13758" y="12544"/>
+  <object id="249" name="House" gid="1171" x="14079.3" y="12544"/>
+  <object id="250" name="House" gid="1171" x="14208" y="12864"/>
+  <object id="251" name="House" gid="1171" x="14527.3" y="13088"/>
+  <object id="252" name="House" gid="1171" x="14848.7" y="13088"/>
+  <object id="253" name="House" gid="1171" x="15168" y="13087.3"/>
+  <object id="254" name="House" gid="1171" x="15520" y="13280.7"/>
+  <object id="255" name="House" gid="1171" x="15297.3" y="13598.7"/>
+  <object id="256" name="House" gid="1171" x="14784" y="13920.7"/>
+  <object id="257" name="House" gid="1171" x="14784" y="14238.7"/>
+  <object id="258" name="House" gid="1171" x="15297.3" y="13950.7"/>
+  <object id="259" name="House" gid="1171" x="15040" y="14560.7"/>
+  <object id="260" name="House" gid="1171" x="15359.3" y="14464"/>
+  <object id="261" name="House" gid="1171" x="15675.3" y="14464.7"/>
+  <object id="262" name="House" gid="1171" x="15968.7" y="14464.7"/>
+  <object id="263" name="House" gid="1171" x="16287.3" y="14466"/>
+  <object id="264" name="House" gid="1171" x="15616" y="13951.3"/>
+  <object id="265" name="House" gid="1171" x="16257.3" y="13952"/>
+  <object id="266" name="House" gid="1171" x="16575.3" y="13951.3"/>
+  <object id="267" name="House" gid="1171" x="16801.3" y="14304"/>
+  <object id="268" name="House" gid="1171" x="16799.3" y="14656.7"/>
+  <object id="269" name="House" gid="1171" x="16288" y="14784.7"/>
+  <object id="270" name="House" gid="1171" x="16416" y="15169.3"/>
+  <object id="271" name="House" gid="1171" x="17057.3" y="14977.3"/>
+  <object id="272" name="House" gid="1171" x="16895.3" y="15488.7"/>
+  <object id="273" name="House" gid="1171" x="17312.7" y="15650"/>
+  <object id="274" name="House" gid="1171" x="17409.3" y="15138.7"/>
+  <object id="275" name="House" gid="1171" x="17729.3" y="15136.7"/>
+  <object id="276" name="House" gid="1171" x="17630" y="15647.3"/>
+  <object id="279" name="House" gid="1171" x="18143.3" y="15488.7"/>
+  <object id="280" name="House" gid="1171" x="18144.7" y="15808.7"/>
+  <object id="281" name="House" gid="1171" x="17633.3" y="15969.3"/>
+  <object id="282" name="House" gid="1171" x="18144.7" y="16322"/>
+  <object id="283" name="House" gid="1171" x="18656.7" y="16000"/>
+  <object id="284" name="House" gid="1171" x="18977.3" y="15998"/>
+  <object id="285" name="House" gid="1171" x="19296.7" y="16001.3"/>
+  <object id="286" name="House" gid="1171" x="19616.7" y="16000"/>
+  <object id="287" name="House" gid="1171" x="19935.3" y="16001.3"/>
+  <object id="289" name="House" gid="1171" x="20990.7" y="16543.3"/>
+  <object id="290" name="House" gid="1171" x="23938" y="13344.7"/>
+  <object id="291" name="House" gid="1171" x="23617.3" y="13344.7"/>
+  <object id="293" name="House" gid="1171" x="23295.3" y="13344"/>
+  <object id="294" name="House" gid="1171" x="22976" y="13216.7"/>
+  <object id="295" name="House" gid="1171" x="22656.7" y="13216"/>
+  <object id="296" name="House" gid="1171" x="22336" y="13215.3"/>
+  <object id="297" name="House" gid="1171" x="22016.7" y="13216.7"/>
+  <object id="298" name="House" gid="1171" x="21695.3" y="13216.7"/>
+  <object id="299" name="House" gid="1171" x="21375.3" y="13088"/>
+  <object id="300" name="House" gid="1171" x="21118.7" y="13600.7"/>
+  <object id="301" name="House" gid="1171" x="21440.7" y="13728"/>
+  <object id="302" name="House" gid="1171" x="22080.7" y="13727.3"/>
+  <object id="303" name="House" gid="1171" x="22400" y="13728"/>
+  <object id="304" name="House" gid="1171" x="22720" y="13856"/>
+  <object id="305" name="House" gid="1171" x="23040.7" y="13855.3"/>
+  <object id="306" name="House" gid="1171" x="20606.7" y="13344"/>
+  <object id="307" name="House" gid="1171" x="20096" y="13090.7"/>
+  <object id="308" name="House" gid="1171" x="19840.3" y="12704"/>
+  <object id="309" name="House" gid="1171" x="19457.3" y="12350.7"/>
+  <object id="310" name="House" gid="1171" x="19392.7" y="12768"/>
+  <object id="311" name="House" gid="1171" x="19647.3" y="13184"/>
+  <object id="312" name="Church" gid="1756" x="4160" y="19712"/>
+  <object id="313" name="Courthouse" gid="461" x="14560" y="8992"/>
+  <object id="314" name="Factory" gid="661" x="18816" y="6048"/>
+ </objectgroup>
+ <objectgroup name="Blockade">
+  <object id="37" name="Hidden" x="1682" y="11626" width="5548" height="1268"/>
+  <object id="41" name="Hidden" x="7804" y="11612" width="4796" height="1280"/>
+  <object id="42" name="Hidden" x="2051.52" y="9821.21" width="1600" height="1603.03"/>
+  <object id="43" name="Hidden" x="3839.39" y="9824.24" width="1596.97" height="1596.97"/>
+  <object id="44" name="Hidden" x="5636.36" y="9824.24" width="1593.94" height="1600"/>
+  <object id="45" name="Hidden" x="7421.21" y="9824.24" width="1603.03" height="1590.91"/>
+  <object id="46" name="Hidden" x="9218.18" y="9827.27" width="1596.97" height="1590.91"/>
+  <object id="47" name="Hidden" x="11009.1" y="9830.3" width="1593.94" height="1584.85"/>
+  <object id="48" name="Hidden" x="12804" y="9188" width="2524" height="2216"/>
+  <object id="50" name="Hidden" x="15356" y="9832" width="636" height="1576"/>
+  <object id="51" name="Hidden" x="15368" y="8032" width="636" height="1600"/>
+  <object id="52" name="Hidden" x="11012" y="8036" width="1588" height="1588"/>
+  <object id="53" name="Hidden" x="9216" y="8036" width="1592" height="1588"/>
+  <object id="54" name="Hidden" x="7428" y="8032" width="1592" height="1600"/>
+  <object id="55" name="Hidden" x="5628" y="8032" width="1608" height="1600"/>
+  <object id="56" name="Hidden" x="3844" y="8040" width="1600" height="1588"/>
+  <object id="57" name="Hidden" x="2056" y="8036" width="1596" height="1588"/>
+  <object id="58" name="Hidden" x="1536" y="9820" width="320" height="1596"/>
+  <object id="59" name="Hidden" x="1528" y="8988" width="324" height="648"/>
+  <object id="60" name="Hidden" x="1236" y="6244" width="612" height="1592"/>
+  <object id="61" name="Hidden" x="1448" y="5428" width="448" height="688"/>
+  <object id="62" name="Hidden" x="2044" y="6236" width="1600" height="1600"/>
+  <object id="63" name="Hidden" x="3836" y="6248" width="1600" height="1596"/>
+  <object id="64" name="Hidden" x="5628" y="6248" width="1600" height="1584"/>
+  <object id="65" name="Hidden" x="7424" y="6244" width="1600" height="1600"/>
+  <object id="66" name="Hidden" x="9216" y="6244" width="1596" height="1608"/>
+  <object id="67" name="Hidden" x="11012" y="6240" width="1592" height="1592"/>
+  <object id="68" name="Hidden" x="12808" y="6244" width="1588" height="1596"/>
+  <object id="69" name="Hidden" x="12796" y="8036" width="328" height="952"/>
+  <object id="70" name="Hidden" x="13248" y="8032" width="1296" height="968"/>
+  <object id="71" name="Hidden" x="14548" y="8020" width="616" height="632"/>
+  <object id="72" name="Hidden" x="14592" y="6240" width="1604" height="1604"/>
+  <object id="73" name="Hidden" x="16384" y="6252" width="1608" height="1588"/>
+  <object id="74" name="Hidden" x="18180" y="6244" width="1596" height="1608"/>
+  <object id="75" name="Hidden" x="19968" y="6248" width="1832" height="1600"/>
+  <object id="76" name="Hidden" x="19964" y="5092" width="1556" height="952"/>
+  <object id="77" name="Hidden" x="19960" y="4752" width="336" height="164"/>
+  <object id="78" name="Hidden" x="18176" y="4456" width="632" height="1576"/>
+  <object id="79" name="Hidden" x="18816" y="4452" width="968" height="1264"/>
+  <object id="80" name="Hidden" x="19460" y="5724" width="316" height="332"/>
+  <object id="81" name="Hidden" x="16384" y="4448" width="1592" height="1600"/>
+  <object id="82" name="Hidden" x="14596" y="4452" width="1592" height="1596"/>
+  <object id="83" name="Hidden" x="12804" y="4456" width="1580" height="1588"/>
+  <object id="84" name="Hidden" x="11008" y="4448" width="1608" height="1604"/>
+  <object id="85" name="Hidden" x="9220" y="4440" width="1596" height="1596"/>
+  <object id="86" name="Hidden" x="7428" y="4444" width="1600" height="1608"/>
+  <object id="87" name="Hidden" x="5636" y="4448" width="1608" height="1608"/>
+  <object id="88" name="Hidden" x="3832" y="4448" width="1608" height="1608"/>
+  <object id="89" name="Hidden" x="2020" y="4416" width="1640" height="1624"/>
+  <object id="90" name="Hidden" x="3408" y="2360" width="3820" height="1880"/>
+  <object id="91" name="Hidden" x="7428" y="2648" width="1588" height="1596"/>
+  <object id="92" name="Hidden" x="7428" y="1720" width="1600" height="740"/>
+  <object id="93" name="Hidden" x="12800" y="11620" width="956" height="916"/>
+  <object id="94" name="Hidden" x="13764" y="11616" width="3840" height="320"/>
+  <object id="95" name="Hidden" x="17620" y="11756" width="1884" height="308"/>
+  <object id="96" name="Hidden" x="1504" y="12936" width="3024" height="704"/>
+  <object id="97" name="Hidden" x="1288" y="11596" width="356" height="328"/>
+  <object id="98" name="Hidden" x="4564" y="12908" width="2852" height="432"/>
+  <object id="99" name="Hidden" x="18392" y="14300" width="1732" height="1392"/>
+  <object id="100" name="Hidden" x="21640" y="16132" width="1592" height="1224"/>
+  <object id="102" name="Hidden" x="14440" y="11936" width="3100" height="804"/>
+  <object id="106" name="Hidden" x="8621.21" y="17124.2" width="2072.73" height="854.545"/>
+  <object id="107" name="Hidden" x="8900" y="16403" width="803.03" height="721.212"/>
+  <object id="108" name="Hidden" x="9715.15" y="16775.8" width="166.667" height="339.394"/>
+  <object id="109" name="Hidden" x="8312" y="14480" width="104" height="4240"/>
+  <object id="110" name="Hidden" x="7932" y="14462" width="376" height="68"/>
+  <object id="111" name="Hidden" x="7934" y="14022" width="70" height="440"/>
+  <object id="112" name="Hidden" x="7554" y="14016" width="372" height="60"/>
+  <object id="113" name="Hidden" x="4669.7" y="14015.2" width="2812.12" height="72.7273"/>
+  <object id="114" name="Hidden" x="3457.58" y="14148.5" width="1272.73" height="51.5152"/>
+  <object id="115" name="Hidden" x="4660.61" y="14093.9" width="69.697" height="51.5152"/>
+  <object id="116" name="Hidden" x="1721.21" y="14284.8" width="1796.97" height="51.5152"/>
+  <object id="117" name="Hidden" x="3442.42" y="14187.9" width="84.8485" height="78.7879"/>
+  <object id="118" name="Hidden" x="2948.48" y="12872.7" height="196.97"/>
+  <object id="120" name="Hidden" x="8184" y="12968" width="1552" height="496"/>
+  <object id="121" name="Hidden" x="8744" y="13496" width="1056" height="584"/>
+  <object id="122" name="Hidden" x="9336" y="14096" width="488" height="488"/>
+  <object id="124" name="Hidden" x="17648" y="16416" width="3216" height="888"/>
  </objectgroup>
 </map>

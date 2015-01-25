@@ -93,6 +93,17 @@ public class Player extends Character implements InputProcessor{
 	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(tilesize,0);
 	    		    		hitOb(e);
+	    		    		hitting = true;
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    		translate(tilesize,0);
+	    		    		hitOb(e);
+	    		    		hitting = true;
 	    		    		break;
 	    		    	}
 	            	}
@@ -117,6 +128,17 @@ public class Player extends Character implements InputProcessor{
 	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(-tilesize,0);
 	    		    		hitOb(e);
+	    		    		hitting = true;
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    		translate(-tilesize,0);
+	    		    		hitOb(e);
+	    		    		hitting = true;
 	    		    		break;
 	    		    	}
 	            	}
@@ -141,6 +163,17 @@ public class Player extends Character implements InputProcessor{
 	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,-tilesize);
 	    		    		hitOb(e);
+	    		    		hitting = true;
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    		translate(0,-tilesize);
+	    		    		hitOb(e);
+	    		    		hitting = true;
 	    		    		break;
 	    		    	}
 	            	}
@@ -165,6 +198,17 @@ public class Player extends Character implements InputProcessor{
 	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,tilesize);
 	    		    		hitOb(e);
+	    		    		hitting = true;
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.hiddenobstacles.size(); e ++){
+	    		    	if(distance(x,y,Obstacle.hiddenobstacles.get(e).x, Obstacle.hiddenobstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.hiddenobstacles.get(e).getCollider())){
+	    		    		translate(0,tilesize);
+	    		    		hitOb(e);
+	    		    		hitting = true;
 	    		    		break;
 	    		    	}
 	            	}

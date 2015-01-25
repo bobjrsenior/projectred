@@ -46,20 +46,41 @@ public class Spawner {
 				Spawn(tile.getName(), rec.x , rec.y);
 			}
 		}
+		
+		test = BasicMap.tiledMap.getLayers().get("Blockade").getObjects();
+		for(MapObject tile : test){
+			if (tile instanceof RectangleMapObject) {
+				Rectangle rec = ((RectangleMapObject) tile).getRectangle();
+				System.out.println(tile.getName());
+				Spawn(tile.getName(), rec.x , rec.y, rec.width, rec.height);
+			}
+		}
 	}
 	
 	
 	//Character Spawns
 	public void Spawn(String object, float PosX, float PosY){
+		Building temp;
 		switch(object){
 		case "Player":	new Player(PosX,PosY); System.out.println("You did it hurray"); break;
 		case "Zombie":	new Zombie(PosX,PosY); break;
 		case "Cow":	new Cow(PosX,PosY); break;
-		case "House": Building temp = new Building(PosX,PosY); temp.setColliderHouse();break;
+		case "House": temp = new Building(PosX,PosY); temp.setColliderHouse();break;
+		case "Church": temp = new Building(PosX,PosY); temp.setColliderChurch();break;
+		case "Courthouse": temp = new Building(PosX,PosY); temp.setColliderCourt();break;
+		case "Factory": temp = new Building(PosX,PosY); temp.setColliderFactory();break;		
 		case "RandomFood": String thing = randy.Randomizer("Food"); System.out.println(thing); Spawn(thing, PosX, PosY); break;
 		case "Bread":	System.out.println("Spawned Bread"); new Bread(PosX,PosY); break;
 		case "ChickenLeg":	new ChickenLeg(PosX,PosY); break;
 		case "Donut":	new Donut(PosX,PosY); break;
+		default: System.out.println("Didn't work");
+		}
+	}
+	
+	//Hidden Spawns
+	public void Spawn(String object, float PosX, float PosY, float width, float height){
+		switch(object){
+		case "Hidden": new Building(PosX,PosY,width,height);break;
 		default: System.out.println("Didn't work");
 		}
 	}

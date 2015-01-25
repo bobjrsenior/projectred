@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Shape2D;
 public class Obstacle {
 
 	public static ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
+	public static ArrayList<Obstacle> hiddenobstacles = new ArrayList<Obstacle>();
 	public int char_index;
 	
 	public int tilesize = 32;
@@ -49,6 +50,11 @@ public class Obstacle {
 	public int addObstacle(Obstacle o){
 		obstacles.add(o);
 		return obstacles.size() - 1;
+	}
+	
+	public int addHiddenObstacle(Obstacle o){
+		hiddenobstacles.add(o);
+		return hiddenobstacles.size() - 1;
 	}
 	
 	public void setCollider(){

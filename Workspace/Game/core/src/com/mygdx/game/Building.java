@@ -19,6 +19,12 @@ public class Building extends Obstacle{
 		obs_index = addObstacle(this);
 	}
 	
+	public Building(float x, float y, float width, float height){
+		super(x, y);
+		obs_index = addHiddenObstacle(this);
+		setCollider(new Rectangle(x,y,width,height));
+	}
+	
 	public void setColliderBuilding(){
 		setCollider(new Rectangle(x,y,320,320));
 	}
@@ -44,9 +50,15 @@ public class Building extends Obstacle{
 		
 	}
 	
+	public void setColliderChurch(){
+		setCollider(new Rectangle(x,y,640,320));
+		tex = new Texture("Map/buildings/church.png");
+	}
+	
 	public void setColliderStore(){
 		setCollider(new Rectangle(x,y,640,320));
 	}
+	
 	
 	public void setColliderGrave(){
 		setCollider(new Rectangle(x,y,32,32));
