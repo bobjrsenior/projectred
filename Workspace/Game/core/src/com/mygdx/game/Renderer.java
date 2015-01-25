@@ -11,7 +11,7 @@ public class Renderer {
 	ArrayList<Item> itemRenders;
 	ArrayList<Character> characterRenders;
 	ArrayList<Obstacle> obstacleRenders;
-	ArrayList<nameDialog> dialogRenders;
+	ArrayList<String> dialogRenders;
 	
 	SpriteBatch batch;
 	
@@ -22,9 +22,7 @@ public class Renderer {
 		itemRenders = Item.items;
 		characterRenders = Character.characters;
 		obstacleRenders = Obstacle.obstacles;
-		
-		
-		
+		dialogRenders = nameDialog.dialog.output;
 	}
 	
 	public void Dispose(){
@@ -69,6 +67,13 @@ public class Renderer {
 			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
 		}
 		
+		
+		String text = "";
+		for(String s : dialogRenders){
+			text += s + "\n";
+		}
+		
+		nameDialog.dialog.font.drawMultiLine(batch, text, nameDialog.dialog.x, nameDialog.dialog.y);
 		
 		batch.end();
 	}

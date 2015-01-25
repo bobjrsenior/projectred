@@ -30,7 +30,7 @@ public class nameDialog {
 	Texture img;
     Texture person;
 
-    BitmapFont font;
+    public static BitmapFont  font;
     
     TiledMap tiledMap;
     OrthographicCamera camera;
@@ -92,10 +92,10 @@ public class nameDialog {
 	
 	public void render(SpriteBatch batch)
 	{
-		batch.begin();
+		//batch.begin();
 		//sprite.draw(batch);
-		font.draw(batch, text, x, y);
-		batch.end();
+		//font.draw(batch, text, x, y);
+		//batch.end();
 	}
 
 }
