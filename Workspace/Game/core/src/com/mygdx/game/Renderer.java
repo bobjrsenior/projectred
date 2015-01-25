@@ -58,7 +58,8 @@ public class Renderer {
 		
 		for(int i = 0; i < itemRenders.size(); i++){
 			Item j = itemRenders.get(i);
-			j.sprite.draw(batch);
+			//j.sprite.draw(batch);
+			batch.draw(j.img, j.x + BasicMap.camoffset.x, j.y + BasicMap.camoffset.y);
 		}
 		
 		for(int i = 0; i < characterRenders.size(); i++){

@@ -6,8 +6,8 @@ public class Food extends Item{
 	public int nutrition;
 	
 	
-	public Food(){
-		super();
+	public Food(float x, float y){
+		super(x,y);
 		itemType="Food";
 	}
 
