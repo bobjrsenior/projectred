@@ -14,7 +14,7 @@ public class Human extends NPC{
 	}
 	
 	public Human(float x, float y) {
-		super(x, y, new Texture("Player.png"));
+		super(x, y, new Texture("People/Player.png"));
 		char_index = addCharacter(this);
 	}
 	

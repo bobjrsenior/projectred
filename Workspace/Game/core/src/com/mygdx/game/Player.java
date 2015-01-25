@@ -21,6 +21,12 @@ public class Player extends Character implements InputProcessor{
 		inventory = new Inventory();
 	}
 	
+	public Player(float x, float y) {
+		super(new Texture("People/Player.png"));
+		char_index = addCharacter(this);
+		inventory = new Inventory();
+	}
+	
 	@Override
 	public boolean keyUp(int keycode){
 

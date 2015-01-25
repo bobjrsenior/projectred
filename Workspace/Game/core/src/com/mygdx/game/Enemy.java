@@ -31,7 +31,7 @@ public class Enemy extends Character{
 	}
 	
 	public Enemy(float x, float y){
-		super(x,y,new Texture("zombie.png"));
+		super(x,y,new Texture("People/zombie.png"));
 		char_index = addCharacter(this);
 		startWander();
 	}
