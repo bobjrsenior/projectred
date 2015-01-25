@@ -88,6 +88,13 @@ public class nameDialog {
 		output.add(lines[rnd.nextInt(lines.length)]);
 	}
 	
+	public void getKiller(){
+		num = rnd.nextInt();
+		FileHandle file = Gdx.files.internal("Scripts/major(Killer)");
+		lines = file.readString().split("[\n]");
+		output.add(lines[rnd.nextInt(lines.length)]);
+	}
+	
 	public void addLine(String line){
 		output.add(line);
 	}

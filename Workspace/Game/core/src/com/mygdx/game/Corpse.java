@@ -13,7 +13,7 @@ public class Corpse {
 		public Corpse(float x, float y){
 			this.x=x;
 			this.y=y;
-			tex = new Texture("People/deadGuy1");
+			tex = new Texture("People/deadGuy1.png");
 			corpseTimer=0;
 			corpses.add(this);
 		}
