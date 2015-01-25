@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Shape2D;
 import com.mygdx.game.Inventory;
 import com.mygdx.game.Obstacle;
+import com.mygdx.game.Character.Character;
 import com.mygdx.game.Character.Enemy.Enemy;
 import com.mygdx.game.Character.NPC.NPC;
 
