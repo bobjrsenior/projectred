@@ -13,6 +13,7 @@ public class Item {
 	
 	public String itemType;
 	
+	public int rarity;
 	
 	public Item(){
 		items.add(this);

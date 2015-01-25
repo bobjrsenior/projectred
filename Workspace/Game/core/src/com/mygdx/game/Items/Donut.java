@@ -3,14 +3,14 @@ package com.mygdx.game.Items;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
-public class Bread extends Food{
+public class Donut extends Food{
 	
 	
-	public Bread(int posX, int posY){
+	public Donut(int posX, int posY){
 		super();
-		nutrition = 10;
-		rarity = 10;
-		img = new Texture("Items/Food/Bread.png");
+		nutrition = 5;
+		rarity = 5;
+		img = new Texture("Items/Food/donut.png");
 		sprite = new Sprite(img);
 		sprite.setPosition(posX, posY);
 	}
