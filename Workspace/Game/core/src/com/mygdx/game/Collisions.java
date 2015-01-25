@@ -70,7 +70,8 @@ public class Collisions {
 	}
 	
 	public boolean isColliding(Shape2D other){
-		try{
+		return Intersector.overlaps((Rectangle) collider, (Rectangle) other);
+		/*try{
 			if(((Circle) other).radius != 0){
 				//true = rectangle false = circle
 				if(shape){
@@ -91,6 +92,7 @@ public class Collisions {
 			}
 		}
 		return false;
+		*/
 	}
 
 	public Shape2D getCollider() {

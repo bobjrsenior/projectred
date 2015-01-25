@@ -20,6 +20,12 @@ public class Player extends Character implements InputProcessor{
 	
 	public Inventory inventory;
 	
+	private boolean[] walking = {false,false,false,false};
+	private int walkdir = 0;
+	private float walkdelay = .2f;
+	private float[] walktimer = new float[4];
+	
+	
 	public int thirst;
 	public int hunger;
 	
@@ -49,11 +55,7 @@ public class Player extends Character implements InputProcessor{
 		inventory = new Inventory();
 	}
 	*/
-	@Override
-	public boolean keyUp(int keycode){
 
-        return false;
-	}
 	
 	public void hit(int index){
 		if(characters.get(index) instanceof Enemy){
@@ -68,89 +70,143 @@ public class Player extends Character implements InputProcessor{
 	public void hitOb(int index){
 		
 	}
+	
+	@Override
+	public void update(){
+		boolean hitting = false;
+		super.update();
+		if(walking[0]){
+			walktimer[0] += Gdx.graphics.getDeltaTime();
+			if(walktimer[0] >= walkdelay){
+				walktimer[0] = 0;
+	        	translate(-tilesize,0);
+	        	for(int e = 0; e < characters.size(); e ++){
+			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    		translate(tilesize,0);
+			    		hit(e);
+			    		hitting = true;
+			    		break;
+			    	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    		translate(tilesize,0);
+	    		    		hitOb(e);
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+			}
+		}
+		if(walking[1]){
+			walktimer[1] += Gdx.graphics.getDeltaTime();
+			if(walktimer[1] >= walkdelay){
+				walktimer[1] = 0;
+	        	translate(tilesize,0);
+	        	for(int e = 0; e < characters.size(); e ++){
+			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    		translate(-tilesize,0);
+			    		hit(e);
+			    		hitting = true;
+			    		break;
+			    	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    		translate(-tilesize,0);
+	    		    		hitOb(e);
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+			}
+		}
+		if(walking[2]){
+			walktimer[2] += Gdx.graphics.getDeltaTime();
+			if(walktimer[2] >= walkdelay){
+				walktimer[2] = 0;
+	        	translate(0,tilesize);
+	        	for(int e = 0; e < characters.size(); e ++){
+			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    		translate(0,-tilesize);
+			    		hit(e);
+			    		hitting = true;
+			    		break;
+			    	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    		translate(0,-tilesize);
+	    		    		hitOb(e);
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+			}
+		}
+		if(walking[3]){
+			walktimer[3] += Gdx.graphics.getDeltaTime();
+			if(walktimer[3] >= walkdelay){
+				walktimer[3] = 0;
+	        	translate(0,-tilesize);
+	        	for(int e = 0; e < characters.size(); e ++){
+			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    		translate(0,tilesize);
+			    		hit(e);
+			    		hitting = true;
+			    		break;
+			    	}
+	        	}
+	        	if(!hitting){
+	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
+	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    		translate(0,tilesize);
+	    		    		hitOb(e);
+	    		    		break;
+	    		    	}
+	            	}
+	        	}
+			}
+		}
+		
+	}
 
 	@Override
 	public boolean keyDown(int keycode) {
-		boolean hitting = false;
         if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
-        	translate(-tilesize,0);
-        	for(int e = 0; e < characters.size(); e ++){
-		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(tilesize,0);
-		    		hit(e);
-		    		hitting = true;
-		    		break;
-		    	}
-        	}
-        	if(!hitting){
-            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
-    		    		translate(tilesize,0);
-    		    		hitOb(e);
-    		    		break;
-    		    	}
-            	}
-        	}
+        	walking[0] = true;
         }
         if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D){
-        	translate(tilesize,0);
-        	for(int e = 0; e < characters.size(); e ++){
-		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(-tilesize,0);
-		    		hitting = true;
-		    		break;
-		    	}
-        	}
-        	if(!hitting){
-            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
-    		    		translate(-tilesize,0);
-    		    		hitOb(e);
-    		    		break;
-    		    	}
-            	}
-        	}
+        	walking[1] = true;
         }
         if(keycode == Input.Keys.UP || keycode == Input.Keys.W){
-        	translate(0,tilesize);
-        	for(int e = 0; e < characters.size(); e ++){
-		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(0,-tilesize);
-		    		hitting = true;
-		    		break;
-		    	}
-        	}
-        	if(!hitting){
-            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
-    		    		translate(0,-tilesize);
-    		    		hitOb(e);
-    		    		break;
-    		    	}
-            	}
-        	}
+        	walking[2] = true;
         }
         if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S){
-        	translate(0,-tilesize);
-        	for(int e = 0; e < characters.size(); e ++){
-		    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
-		    		translate(0,tilesize);
-		    		hitting = true;
-		    		break;
-		    	}
-        	}
-        	if(!hitting){
-            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
-    		    		translate(0,tilesize);
-    		    		hitOb(e);
-    		    		break;
-    		    	}
-            	}
-        	}
+        	walking[3] = true;
         }
-        System.out.println(x + " : " + y);
 		return false;
+	}
+	
+	@Override
+	public boolean keyUp(int keycode){
+        if(keycode == Input.Keys.LEFT || keycode == Input.Keys.A){
+        	walking[0] = false;
+
+        }
+        if(keycode == Input.Keys.RIGHT || keycode == Input.Keys.D){
+        	walking[1] = false;
+        }
+        if(keycode == Input.Keys.UP || keycode == Input.Keys.W){
+        	walking[2] = false;
+        }
+        if(keycode == Input.Keys.DOWN || keycode == Input.Keys.S){
+        	walking[3] = false;
+        }
+        return false;
 	}
 
 
