@@ -35,6 +35,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     Sprite sprite;
     Renderer renderer;
     Spawner spawner;
+    int spookTimer=0;
     
     static TiledMap tiledMap;
     OrthographicCamera camera;
