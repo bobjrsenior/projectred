@@ -35,6 +35,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     Sprite sprite;
     Renderer renderer;
     Spawner spawner;
+    int spookTimer=0;
     
     static TiledMap tiledMap;
     OrthographicCamera camera;
@@ -184,8 +185,6 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
             tiledMap.getLayers().get(0).setVisible(!tiledMap.getLayers().get(0).isVisible());
         if(keycode == Input.Keys.NUM_2)
             tiledMap.getLayers().get(1).setVisible(!tiledMap.getLayers().get(1).isVisible());
-        if(keycode == Input.Keys.ESCAPE)
-        	Gdx.app.exit();
         return false;
     }
 

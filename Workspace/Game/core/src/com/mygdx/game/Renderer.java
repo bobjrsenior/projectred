@@ -8,12 +8,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Items.Item;
 import com.mygdx.game.Character.Character;
 
-
 public class Renderer {
 	ArrayList<Item> itemRenders;
 	ArrayList<Character> characterRenders;
 	ArrayList<Obstacle> obstacleRenders;
 	ArrayList<String> dialogRenders;
+	ArrayList<Corpse> corpseRenders;
 	
 	SpriteBatch batch;
 	
@@ -40,6 +40,10 @@ public class Renderer {
 		
 		for(int i = 0; i < obstacleRenders.size()-1; i++){
 			Obstacle o = obstacleRenders.get(i);
+			o.tex.dispose();
+		}
+		for(int i = 0; i <corpseRenders.size()-1; i++){
+			Corpse o = corpseRenders.get(i);
 			o.tex.dispose();
 		}
 		nameDialog.dialog.font.dispose();
@@ -72,6 +76,12 @@ public class Renderer {
 			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
 		}
 		
+		for(int i = 0; i < corpseRenders.size(); i++){
+			Corpse o corpseRenders.get(i);
+			o.corpseTimer++;
+			if(o.corpseTimer>=200) o.tex.dispose();
+			batch.draw(o.tex, o.x + BasicMap.camoffset.x, o.y + BasicMap.camoffset.y);	
+		}
 		
 		String text = "";
 		for(String s : dialogRenders){

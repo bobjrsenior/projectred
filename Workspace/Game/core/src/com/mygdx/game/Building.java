@@ -51,7 +51,7 @@ public class Building extends Obstacle{
 	}
 	
 	public void setColliderChurch(){
-		setCollider(new Rectangle(x,y,960,640));
+		setCollider(new Rectangle(x,y,640,320));
 		tex = new Texture("Map/buildings/church.png");
 	}
 	

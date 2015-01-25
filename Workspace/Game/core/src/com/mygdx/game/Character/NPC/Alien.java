@@ -7,7 +7,7 @@ import com.mygdx.game.Character.Enemy.Enemy;
 
 public class Alien extends NPC{
 
-	public Alien(float x, float y, Texture tex) {
+	public Alien(float x, float y) {
 		super(x, y);
 		tex = new Texture("People/alienfriend.png");
 		char_index = addCharacter(this);

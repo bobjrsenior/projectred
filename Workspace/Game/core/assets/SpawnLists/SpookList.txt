@@ -1,0 +1,4 @@
+RandomAI
+RandomFood
+RandomDrink
+Corpse

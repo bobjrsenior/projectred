@@ -15,9 +15,6 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		//new LwjglApplication(new TitleScreen(), config);
 		//new LwjglApplication(new MyGdxGame(), config);
-		
-		config.title = "GAME";
-		config.fullscreen = true;
 		new LwjglApplication(new SceneManager(), config);
 	}
 }
