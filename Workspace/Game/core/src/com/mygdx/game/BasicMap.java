@@ -45,6 +45,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     static Vector3 initialcampos;
     static Vector3 camoffset;
     
+    public nameDialog dialog;
     
     //NPC test_player2;
     
@@ -101,7 +102,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     	
     	initialcampos = new Vector3(camera.position);
     	camoffset = new Vector3(0,0,0);
-    	new nameDialog();
+    	dialog = new nameDialog();
     }
     
     public void dispose() {
@@ -116,6 +117,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
     	npc.update();
     	test_npc.update();
     	*/
+    	dialog.update();
     	
     	//Make the camera centered around the player
     	Vector3 translation = new Vector3(Player.p.x - camera.position.x,Player.p.y - camera.position.y,0);

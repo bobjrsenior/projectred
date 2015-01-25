@@ -24,6 +24,8 @@ public class nameDialog {
 	private int num;
 	private Sprite sprite;
 	
+	private float dissapeartime = 2f;
+	private float dissapeartimer = 0;
 	
 	Texture rec;
 	
@@ -51,11 +53,21 @@ public class nameDialog {
 		//name = type;
 		create();
 	}
+	
+	public void update(){
+		if(output.size() != 0){
+			dissapeartimer += Gdx.graphics.getDeltaTime();
+			if(dissapeartimer >= dissapeartime){
+				dissapeartimer = 0;
+				removeLine();
+			}
+		}
+	}
 
 	public void getZombie()
 	{
 		num = rnd.nextInt();
-		FileHandle file = Gdx.files.internal("Scripts/minor(Zombie).txt");
+		FileHandle file = Gdx.files.internal("Scripts/minor(Zombie)");
 		lines = file.readString().split("[\n]");
 		output.add(lines[rnd.nextInt(lines.length)]);
 	}
@@ -71,7 +83,7 @@ public class nameDialog {
 	public void getHuman()
 	{
 		num = rnd.nextInt();
-		FileHandle file = Gdx.files.internal("Scripts/minor(Human).txt");
+		FileHandle file = Gdx.files.internal("Scripts/minor(Human)");
 		lines = file.readString().split("[\n]");
 		output.add(lines[rnd.nextInt(lines.length)]);
 	}
@@ -81,7 +93,7 @@ public class nameDialog {
 	}
 	
 	public void removeLine(){
-		output.remove(output.size() - 1);
+		output.remove(0);
 	}
 	
 	public void removeLine(int index){

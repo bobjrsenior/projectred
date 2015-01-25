@@ -1,6 +1,9 @@
 package com.mygdx.game.Character.NPC;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.nameDialog;
+import com.mygdx.game.Character.Player;
+import com.mygdx.game.Character.Enemy.Enemy;
 
 public class Alien extends NPC{
 
@@ -15,4 +18,14 @@ public class Alien extends NPC{
 		char_index = addCharacter(this);
 	}
 	*/
+	
+	@Override
+	public void hit(int index){
+		if(characters.get(index) instanceof Player){
+			nameDialog.dialog.getAlien();
+		}
+		else if(characters.get(index) instanceof Enemy){
+			health -= 10;
+		}
+	}
 }

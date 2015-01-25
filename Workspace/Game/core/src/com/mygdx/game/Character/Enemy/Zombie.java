@@ -1,11 +1,29 @@
 package com.mygdx.game.Character.Enemy;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.nameDialog;
+import com.mygdx.game.Character.Player;
 
 public class Zombie extends Enemy {
 
 	public Zombie(float x , float y){
 		super(x,y);
 		tex = new Texture("People/Zombie.png");
+	}
+	
+	@Override
+	public void update(){
+		super.update();
+		if(Player.p != null){
+			startFollow(Player.p);
+		}
+	}
+	
+	@Override
+	public void hit(int index){
+		super.hit(index);
+		if(characters.get(index) instanceof Player){
+			nameDialog.dialog.getZombie();
+		}
 	}
 }
