@@ -65,7 +65,7 @@ public class Spawner {
 		case "Church": temp = new Building(PosX,PosY); temp.setColliderChurch();break;
 		case "Courthouse": temp = new Building(PosX,PosY); temp.setColliderCourt();break;
 		case "Factory": temp = new Building(PosX,PosY); temp.setColliderFactory();break;		
-		case "RandomFood": String thing = randy.Randomizer("Food"); System.out.println(thing); Spawn(thing, PosX, PosY); break;
+		case "RandomFood": String thing = randy.Randomizer("Food"); Spawn(thing, PosX, PosY); break;
 		case "Bread":	System.out.println("Spawned Bread"); new Bread(PosX,PosY); break;
 		case "ChickenLeg":	new ChickenLeg(PosX,PosY); break;
 		case "Donut":	new Donut(PosX,PosY); break;
