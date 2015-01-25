@@ -30,7 +30,7 @@ public class nameDialog {
 	Texture img;
     Texture person;
 
-    public static BitmapFont  font;
+    public BitmapFont  font;
     
     TiledMap tiledMap;
     OrthographicCamera camera;
@@ -78,6 +78,14 @@ public class nameDialog {
 	
 	public void addLine(String line){
 		output.add(line);
+	}
+	
+	public void removeLine(){
+		output.remove(output.size() - 1);
+	}
+	
+	public void removeLine(int index){
+		output.remove(index);
 	}
 	
 	public void clear(){

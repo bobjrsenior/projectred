@@ -42,6 +42,7 @@ public class Renderer {
 			Obstacle o = obstacleRenders.get(i);
 			o.tex.dispose();
 		}
+		nameDialog.dialog.font.dispose();
 		batch.dispose();
 	}
 	
