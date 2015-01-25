@@ -2,6 +2,9 @@ package com.mygdx.game.Character.NPC;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.nameDialog;
+import com.mygdx.game.Character.Player;
+import com.mygdx.game.Character.Enemy.Enemy;
 
 public class Human extends NPC{
 
@@ -26,13 +29,13 @@ public class Human extends NPC{
 		//dialog.render();
 	}
 	
-	/*@Override
+	@Override
 	public void hit(int index){
 		if(characters.get(index) instanceof Player){
-			Gdx.app.log("NPC", "Say something");
+			nameDialog.dialog.getHuman();
 		}
 		else if(characters.get(index) instanceof Enemy){
 			health -= 10;
 		}
-	}*/
+	}
 }

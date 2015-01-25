@@ -81,7 +81,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[0] = 0;
 	        	translate(-tilesize,0);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(tilesize,0);
 			    		hit(e);
 			    		hitting = true;
@@ -90,7 +90,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(tilesize,0);
 	    		    		hitOb(e);
 	    		    		break;
@@ -105,7 +105,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[1] = 0;
 	        	translate(tilesize,0);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(-tilesize,0);
 			    		hit(e);
 			    		hitting = true;
@@ -114,7 +114,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(-tilesize,0);
 	    		    		hitOb(e);
 	    		    		break;
@@ -129,7 +129,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[2] = 0;
 	        	translate(0,tilesize);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(0,-tilesize);
 			    		hit(e);
 			    		hitting = true;
@@ -138,7 +138,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,-tilesize);
 	    		    		hitOb(e);
 	    		    		break;
@@ -153,7 +153,7 @@ public class Player extends Character implements InputProcessor{
 				walktimer[3] = 0;
 	        	translate(0,-tilesize);
 	        	for(int e = 0; e < characters.size(); e ++){
-			    	if(isColliding(characters.get(e).getCollider()) && e != char_index){
+			    	if(distance(x,y,characters.get(e).x, characters.get(e).y) < 2 * Player.p.tilesize && isColliding(characters.get(e).getCollider()) && e != char_index){
 			    		translate(0,tilesize);
 			    		hit(e);
 			    		hitting = true;
@@ -162,7 +162,7 @@ public class Player extends Character implements InputProcessor{
 	        	}
 	        	if(!hitting){
 	            	for(int e = 0; e < Obstacle.obstacles.size(); e ++){
-	    		    	if(isColliding(Obstacle.obstacles.get(e).getCollider())){
+	    		    	if(distance(x,y,Obstacle.obstacles.get(e).x, Obstacle.obstacles.get(e).y) < 2 * Player.p.tilesize && isColliding(Obstacle.obstacles.get(e).getCollider())){
 	    		    		translate(0,tilesize);
 	    		    		hitOb(e);
 	    		    		break;
