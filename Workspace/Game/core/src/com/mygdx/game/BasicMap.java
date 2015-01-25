@@ -66,20 +66,17 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         camera.setToOrtho(false,w,h);
         camera.update();
         
-        player = new Player(5312, 4672,new Texture("People/player.png"));
+        player = new Player(5312, 4672);
         player.setCollider(15f, 15f);
-        
-        test_player2 = new NPC(75, 150,new Texture("People/person.png"));
-        test_player2.setCollider(15f, 15f);
         
         //test_player2.startFollow(player);
         
-        npc = new Human(300, 50,new Texture("People/person.png"));
+        npc = new Human(300, 50);
         npc.setCollider(15f, 15f);
 
         //test_player = new Player(75, 50,new Texture("person.png"));
         //test_player.setCollider(15f, 15f);
-        test_npc = new Enemy(75, 350,new Texture("People/alienFriend.png"));
+        test_npc = new Enemy(75, 350);
         test_npc.setCollider(15f, 15f);
         test_npc.startFollow(player);
 
@@ -145,8 +142,8 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         	batch.begin();
         	batch.draw(b.tex, b.x + camoffset.x, b.y + camoffset.y);
             batch.end();
-		*/
         }
+		*/
         
     }
     
