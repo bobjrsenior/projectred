@@ -80,7 +80,7 @@ public class BasicMap extends ApplicationAdapter implements InputProcessor, Scre
         test_npc.setCollider(15f, 15f);
         test_npc.startFollow(player);
 
-        person = new Texture("person.png");
+        person = new Texture("People/person.png");
         //sprite = new Sprite(person);
         //sprite.setPosition(w/2 -sprite.getWidth()/2, h/2 -sprite.getHeight()/2);
         tiledMap = new TmxMapLoader().load("Map/map2.tmx");
